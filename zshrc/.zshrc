@@ -1,23 +1,28 @@
-# Lines configured by zsh-newuser-install
+#
+# Zsh config
+#
+
+# History settings
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+
+# Setopts
 setopt autocd extendedglob correct sharehistory
 unsetopt beep
-bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/naga/.zshrc'
 
+# Unsure if i need this
+# bindkey -e
+# zstyle :compinstall filename '/home/naga/.zshrc'
+
+# runs compinit for auto completion
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
-#
 
-# Fixing for SSH
+# Fix for SSH interpretations
 if [[ "$TERM" == "xterm-kitty" ]]; then
   alias ssh='kitty +kitten ssh'
 fi
 
-
+# Init starship
 eval "$(starship init zsh)"
