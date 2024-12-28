@@ -14,4 +14,10 @@ compinit
 # End of lines added by compinstall
 #
 
+# Fixing for SSH
+if [[ "$TERM" == "xterm-kitty" ]]; then
+  alias ssh='kitty +kitten ssh'
+fi
+
+
 eval "$(starship init zsh)"
