@@ -2,7 +2,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt autocd extendedglob
+setopt autocd extendedglob correct sharehistory
 unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
