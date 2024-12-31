@@ -20,9 +20,13 @@ autoload -Uz compinit
 compinit
 
 # Fix for SSH interpretations
+#
 if [[ "$TERM" == "xterm-kitty" ]]; then
   alias ssh='kitty +kitten ssh'
 fi
+
+# icat command for image view
+alias icat="kitten icat"
 
 # Init starship
 eval "$(starship init zsh)"
