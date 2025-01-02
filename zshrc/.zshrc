@@ -19,10 +19,17 @@ unsetopt beep
 autoload -Uz compinit
 compinit
 
+# Set standard Editor
+export EDITOR=nvim
+export VISUAL=nvim
+
 # Fix for SSH interpretations
 #
-if [[ "$TERM" == "xterm-kitty" ]]; then
-  alias ssh='kitty +kitten ssh'
+#if [[ "$TERM" == "xterm-kitty" ]]; then
+#  alias ssh='kitty +kitten ssh'
+#fi
+if [[ "$TERM" == "xterm-kitty" ]] || [[ "$TERM" == "xterm-ghostty" ]]; then  
+  export TERM=xterm-256color
 fi
 
 # icat command for image view
