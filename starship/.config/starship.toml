@@ -4,7 +4,6 @@
 format = """
 [](nord0)\
 $username\
-[@](bg:nord0 fg:nord4)\
 $hostname\
 $os\
 [](bg:nord1 fg:nord0)\
@@ -37,7 +36,7 @@ add_newline = true
 palette = 'nord'
 
 [palettes.nord]
-nord0 = '#2E3440'
+nord0 = '#2E3441'
 nord1 = '#3B4252'
 nord2 = '#434C5E'
 nord3 = '#4C566A'
@@ -55,10 +54,10 @@ show_always = true
 disabled = false
 
 [hostname]
-ssh_only = false
+ssh_only = true
 ssh_symbol = ' '
 trim_at = '.'
-format = '[$hostname$ssh_symbol]($style)'
+format = '[@$hostname$ssh_symbol]($style)'
 style = 'bg:nord0 fg:nord4'
 disabled = false
 
