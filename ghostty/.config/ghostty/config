@@ -1,9 +1,14 @@
-theme = catppuccin-mocha
+theme = nord
+
+font-family = MesloLGL Nerd Font
+
 
 background-opacity = 0.9
 background-blur-radius = 20
 
-window-decoration=true
+window-padding-x = 2
+
+window-decoration=false
 
 keybind = ctrl+t=new_tab
 keybind = ctrl+w=close_window
