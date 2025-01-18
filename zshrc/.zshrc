@@ -35,5 +35,8 @@ fi
 # icat command for image view
 alias icat="kitten icat"
 
+
+export PATH=$PATH:$HOME/.local/bin
+
 # Init starship
 eval "$(starship init zsh)"
