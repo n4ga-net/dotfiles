@@ -35,5 +35,8 @@ fi
 # icat command for image view
 alias icat="kitten icat"
 
+# path for Lunarvim
+export PATH=$PATH:$HOME/.local/bin
+
 # Init starship
 eval "$(starship init zsh)"
