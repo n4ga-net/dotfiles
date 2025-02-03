@@ -1,23 +1,25 @@
 configuration {
     font: "MesloLGS Nerd Font 12";
+    modes: "drun,emoji,calc";
     line-margin: 10;
-
     display-ssh:    "";
     display-run:    "";
     display-drun:   "";
     display-window: "";
     display-combi:  "";
     show-icons:     true;
+    terminal: "ghostty";
+    ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";
 }
 
 
 @theme "~/.config/rofi/nord.rasi"
 
 listview {
-	lines: 6;
+	lines: 10;
 	columns: 1;
 }
 
 window {
-	width: 15%;
+	width: 600;
 }

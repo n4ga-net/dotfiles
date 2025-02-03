@@ -67,3 +67,15 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = {
   "haskell"
 }
+
+-- Remove trailing whitespace
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*",
+  command = [[%s/\s\+$//e]],
+})
+
+-- Remove empty lines at the end of the file
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*",
+  command = [[%s/\($\n\s*\)\+\%$//e]],
+})

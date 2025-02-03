@@ -20,8 +20,8 @@ autoload -Uz compinit
 compinit
 
 # Set standard Editor
-export EDITOR=nvim
-export VISUAL=nvim
+export EDITOR=lvim
+export VISUAL=lvim
 
 # Fix for SSH interpretations
 #
@@ -35,6 +35,8 @@ fi
 # icat command for image view
 alias icat="kitten icat"
 
+# copilot alias
+alias copilot="gh copilot"
 
 export PATH=$PATH:$HOME/.local/bin
 
