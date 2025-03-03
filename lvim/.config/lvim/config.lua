@@ -7,11 +7,10 @@ vim.opt_local.shiftwidth = 2
 vim.opt_local.expandtab = true
 vim.opt.clipboard = 'unnamedplus'
 
-
 -- Keymappings
 lvim.keys.normal_mode["<C-f>"] = ":Telescope find_files<cr>"
-lvim.keys.normal_mode["<C-A-Left>"] = ":NvimTreeResize -10<cr>"
-lvim.keys.normal_mode["<C-A-Right>"] = ":NvimTreeResize +10<cr>"
+lvim.keys.normal_mode["<C-M-Right>"] = ":NvimTreeResize -10<cr>"
+lvim.keys.normal_mode["<C-M-Left>"] = ":NvimTreeResize +10<cr>"
 lvim.keys.normal_mode["<M-t>"] = ":NvimTreeToggle<cr>"
 lvim.keys.normal_mode["o"] = ":NvimTreeFocus<cr>"
 
