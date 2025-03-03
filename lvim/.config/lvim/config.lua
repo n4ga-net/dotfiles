@@ -10,19 +10,18 @@ lvim.colorscheme = "nord"
 
 -- Keymappings
 lvim.keys.normal_mode["<C-f>"] = ":Telescope find_files<cr>"
-lvim.keys.normal_mode["<C-M-Right>"] = ":NvimTreeResize -10<cr>"
-lvim.keys.normal_mode["<C-M-Left>"] = ":NvimTreeResize +10<cr>"
+lvim.keys.normal_mode["<C-Left>"] = ":NvimTreeResize -10<cr>"
+lvim.keys.normal_mode["<C-Right>"] = ":NvimTreeResize +10<cr>"
+--lvim.keys.normal_mode["<C-h>"] = ":NvimTreeResize -10<cr>"
+--lvim.keys.normal_mode["<C-l>"] = ":NvimTreeResize +10<cr>"
 lvim.keys.normal_mode["<M-t>"] = ":NvimTreeToggle<cr>"
 lvim.keys.normal_mode["t"] = ":NvimTreeFocus<cr>"
 
 -- Plugins
 lvim.plugins = {
-  {
-    "github/copilot.vim",
-  },
+  { "github/copilot.vim" },
   { "nordtheme/vim" },
 }
-
 
 -- Copilot
 local ok, copilot = pcall(require, "copilot")
