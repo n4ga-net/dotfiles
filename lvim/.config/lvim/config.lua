@@ -12,7 +12,7 @@ lvim.keys.normal_mode["<C-f>"] = ":Telescope find_files<cr>"
 lvim.keys.normal_mode["<C-M-Right>"] = ":NvimTreeResize -10<cr>"
 lvim.keys.normal_mode["<C-M-Left>"] = ":NvimTreeResize +10<cr>"
 lvim.keys.normal_mode["<M-t>"] = ":NvimTreeToggle<cr>"
-lvim.keys.normal_mode["o"] = ":NvimTreeFocus<cr>"
+lvim.keys.normal_mode["t"] = ":NvimTreeFocus<cr>"
 
 -- Plugins
 lvim.plugins = {
