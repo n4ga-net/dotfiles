@@ -1,4 +1,3 @@
-
 # Powerline style with Nord color palette
 
 format = """
@@ -222,4 +221,3 @@ SUSE = ' '
 Ubuntu = ' '
 Unknown = ' '
 Windows = '󰍲 '
-

@@ -12,7 +12,6 @@ configuration {
     ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";
 }
 
-
 @theme "~/.config/rofi/nord.rasi"
 
 listview {

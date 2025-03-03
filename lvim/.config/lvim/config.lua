@@ -6,6 +6,7 @@ vim.opt_local.tabstop = 2
 vim.opt_local.shiftwidth = 2
 vim.opt_local.expandtab = true
 vim.opt.clipboard = 'unnamedplus'
+lvim.colorscheme = "nord"
 
 -- Keymappings
 lvim.keys.normal_mode["<C-f>"] = ":Telescope find_files<cr>"
@@ -19,7 +20,9 @@ lvim.plugins = {
   {
     "github/copilot.vim",
   },
+  { "nordtheme/vim" },
 }
+
 
 -- Copilot
 local ok, copilot = pcall(require, "copilot")
