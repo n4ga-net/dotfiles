@@ -45,10 +45,10 @@ return {
 			lspconfig.vimls.setup({ capabilities = capabilities })
 			lspconfig.yamlls.setup({ capabilities = capabilities })
 			lspconfig.markdown_oxide.setup({ capabilities = capabilities })
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show hover information" })
+			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Go to references" })
+			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {desc = "Code Action" })
 		end,
 	},
 	{
@@ -58,7 +58,7 @@ return {
 				ensure_installed = {
 					"stylua",
 					"black",
-					"eslint_d",
+					"eslint",
 					"prettier",
 					"isort",
 				},
@@ -74,11 +74,11 @@ return {
 					null_ls.builtins.formatting.stylua,
 					null_ls.builtins.diagnostics.black,
 					null_ls.builtins.formatting.isort,
-					null_ls.builtins.diagnostics.eslint_d,
+					null_ls.builtins.diagnostics.eslint,
 					null_ls.builtins.formatting.prettier,
 				},
 			})
-			vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+			vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Format" })
 		end,
 	},
 }
