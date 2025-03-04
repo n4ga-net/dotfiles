@@ -29,16 +29,16 @@ if not ok then
   return
 end
 
-copilot.setup {
-  suggestion = {
-    keymap = {
-      accept = "<c-l>",
-      next = "<c-j>",
-      prev = "<c-k>",
-      dismiss = "<c-h>",
-    },
-  },
-}
+-- copilot.setup {
+--   suggestion = {
+--     keymap = {
+--       accept = "<c-l>",
+--       next = "<c-j>",
+--       prev = "<c-k>",
+--       dismiss = "<c-h>",
+--     },
+--   },
+-- }
 
 -- Treesitter
 lvim.builtin.treesitter.auto_install = true
