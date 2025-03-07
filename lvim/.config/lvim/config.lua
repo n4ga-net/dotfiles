@@ -6,20 +6,21 @@ vim.opt_local.tabstop = 2
 vim.opt_local.shiftwidth = 2
 vim.opt_local.expandtab = true
 vim.opt.clipboard = 'unnamedplus'
-
+lvim.colorscheme = "nord"
 
 -- Keymappings
 lvim.keys.normal_mode["<C-f>"] = ":Telescope find_files<cr>"
-lvim.keys.normal_mode["<C-A-Left>"] = ":NvimTreeResize -10<cr>"
-lvim.keys.normal_mode["<C-A-Right>"] = ":NvimTreeResize +10<cr>"
+lvim.keys.normal_mode["<C-Left>"] = ":NvimTreeResize -10<cr>"
+lvim.keys.normal_mode["<C-Right>"] = ":NvimTreeResize +10<cr>"
+--lvim.keys.normal_mode["<C-h>"] = ":NvimTreeResize -10<cr>"
+--lvim.keys.normal_mode["<C-l>"] = ":NvimTreeResize +10<cr>"
 lvim.keys.normal_mode["<M-t>"] = ":NvimTreeToggle<cr>"
-lvim.keys.normal_mode["o"] = ":NvimTreeFocus<cr>"
+lvim.keys.normal_mode["t"] = ":NvimTreeFocus<cr>"
 
 -- Plugins
 lvim.plugins = {
-  {
-    "github/copilot.vim",
-  },
+  { "github/copilot.vim" },
+  { "nordtheme/vim" },
 }
 
 -- Copilot
@@ -67,3 +68,16 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = {
   "haskell"
 }
+
+-- Remove trailing whitespace
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*",
+  command = [[%s/\s\+$//e]],
+})
+
+-- Remove empty lines at the end of the file
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*",
+  command = [[%s/\($\n\s*\)\+\%$//e]],
+})
+
