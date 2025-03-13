@@ -20,8 +20,8 @@ autoload -Uz compinit
 compinit
 
 # Set standard Editor
-export EDITOR=lvim
-export VISUAL=lvim
+export EDITOR=nvim
+export VISUAL=nvim
 
 # Fix for SSH interpretations
 #
@@ -49,6 +49,9 @@ source "$ZINIT_HOME/zinit.zsh"
 
 # Zinit addons
 zinit light zsh-users/zsh-syntax-highlighting
+
+# Set Manpager to Nvim
+export MANPAGER='nvim +Man!'
 
 # Init starship
 eval "$(starship init zsh)"

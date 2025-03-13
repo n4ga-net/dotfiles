@@ -31,3 +31,8 @@ vim.keymap.set("n", "<leader>ft", function()
   vim.bo.filetype = "toml"
   print("Filetype set to TOML")
 end, { desc = "Set filetype to TOML" })
+
+-- NvimTree change root folder
+vim.keymap.set("n", "<leader>cd", "<C-]>", { desc = "NvimTree change root folder" })
+
+-- Cool comment
