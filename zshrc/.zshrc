@@ -53,5 +53,8 @@ zinit light zsh-users/zsh-syntax-highlighting
 # Set Manpager to Nvim
 export MANPAGER='nvim +Man!'
 
+# Alias for Eza
+alias eza='eza --hyperlink'
+
 # Init starship
 eval "$(starship init zsh)"

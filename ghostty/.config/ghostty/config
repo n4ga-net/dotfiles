@@ -2,8 +2,8 @@ theme = nord
 
 font-family = MesloLGL Nerd Font
 
-background-opacity = 0.95
-background-blur-radius = 20
+#background-opacity = 0.95
+#background-blur-radius = 20
 
 window-padding-x = 2
 
