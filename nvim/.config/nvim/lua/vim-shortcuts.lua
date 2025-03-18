@@ -12,6 +12,8 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up half page" })
 -- make search with / better
 vim.keymap.set("n", "n", "nzzzzv", { desc = "Search next" })
 vim.keymap.set("n", "N", "Nzzzzv", { desc = "Search previous" })
+-- clear search
+vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- Paste without overwriting clipboard
 vim.keymap.set("x", "<leader>p", "\"_dP", { desc = "Paste preserved" })
