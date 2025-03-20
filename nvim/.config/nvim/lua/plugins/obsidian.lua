@@ -1,8 +1,9 @@
 return {
 	"epwalsh/obsidian.nvim",
 	version = "*",
-	lazy = true,
-	ft = "markdown",
+	-- Removing tag to just load in markdown to always have osbidian commands available, setting lazy to false to always load
+  lazy = false,
+	  -- ft = "markdown",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
@@ -18,6 +19,11 @@ return {
 		},
     ui = {
       enable = false
+    },
+    templates = {
+      folder = "~/obsidian/Templates",
+      date_format = "%Y-%m-%d-%a",
+      time_format = "%H:%M",
     },
 	},
 }
