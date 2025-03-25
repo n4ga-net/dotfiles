@@ -40,3 +40,6 @@ vim.keymap.set("n", "<leader>cd", "<C-]>", { desc = "NvimTree change root folder
 -- Obsidian
 vim.keymap.set('n', '<leader>nt', ':ObsidianTemplate<cr>', { desc = "Obsidian Template" })
 vim.keymap.set('n', '<leader>nn', ':ObsidianNewFromTemplate<cr>', { desc = "Obsidian New Note" })
+
+-- toggle line wrap with <leader>lw
+vim.keymap.set('n', '<leader>lw', ':set wrap!<cr>', { desc = "Toggle line wrap" })
