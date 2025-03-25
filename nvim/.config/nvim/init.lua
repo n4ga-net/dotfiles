@@ -15,3 +15,4 @@ require("vim-options")
 require("vim-shortcuts")
 require("float-terminal")
 require("lazy").setup("plugins")
+
