@@ -42,7 +42,7 @@ vim.keymap.set('n', '<leader>tf', function()
 end, { desc = "Set top folder in nvim-tree" })
 
 -- Disable arrow keys in normal, insert, and visual modes
-vim.keymap.set({'n', 'i', 'v'}, '<Up>', '<Nop>')
-vim.keymap.set({'n', 'i', 'v'}, '<Down>', '<Nop>')
-vim.keymap.set({'n', 'i', 'v'}, '<Left>', '<Nop>')
-vim.keymap.set({'n', 'i', 'v'}, '<Right>', '<Nop>')
+vim.keymap.set({'n', 'v'}, '<Up>', '<Nop>')
+vim.keymap.set({'n', 'v'}, '<Down>', '<Nop>')
+vim.keymap.set({'n', 'v'}, '<Left>', '<Nop>')
+vim.keymap.set({'n', 'v'}, '<Right>', '<Nop>')
