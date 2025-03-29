@@ -12,6 +12,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up half page" })
 -- make search with / better
 vim.keymap.set("n", "n", "nzzzzv", { desc = "Search next" })
 vim.keymap.set("n", "N", "Nzzzzv", { desc = "Search previous" })
+
 -- clear search
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
@@ -24,9 +25,9 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Move line below to end of current line" })
 
 -- Yank to external clipboard
-vim.keymap.set("n", "<leader>y", "\"+y", { desc = "Yank to clipboard" })
-vim.keymap.set("v", "<leader>y", "\"+y", { desc = "Yank to clipboard" })
-vim.keymap.set("n", "<leader>Y", "\"+Y", { desc = "Yank line to clipboard" })
+-- vim.keymap.set("n", "<leader>y", "\"+y", { desc = "Yank to clipboard" })
+-- vim.keymap.set("v", "<leader>y", "\"+y", { desc = "Yank to clipboard" })
+-- vim.keymap.set("n", "<leader>Y", "\"+Y", { desc = "Yank line to clipboard" })
 
 -- Obsidian
 vim.keymap.set('n', '<leader>nt', ':ObsidianTemplate<cr>', { desc = "Obsidian Template" })
@@ -34,3 +35,14 @@ vim.keymap.set('n', '<leader>nn', ':ObsidianNewFromTemplate<cr>', { desc = "Obsi
 
 -- toggle line wrap with <leader>lw
 vim.keymap.set('n', '<leader>lw', ':set wrap!<cr>', { desc = "Toggle line wrap" })
+
+-- Set top folder in nvimtree
+vim.keymap.set('n', '<leader>tf', function()
+  require("nvim-tree.api").tree.change_root_to_node()
+end, { desc = "Set top folder in nvim-tree" })
+
+-- Disable arrow keys in normal, insert, and visual modes
+vim.keymap.set({'n', 'i', 'v'}, '<Up>', '<Nop>')
+vim.keymap.set({'n', 'i', 'v'}, '<Down>', '<Nop>')
+vim.keymap.set({'n', 'i', 'v'}, '<Left>', '<Nop>')
+vim.keymap.set({'n', 'i', 'v'}, '<Right>', '<Nop>')
