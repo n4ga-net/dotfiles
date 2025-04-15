@@ -14,7 +14,7 @@
   "menus.dashboard.powermenu.sleep": "systemctl suspend",
   "menus.dashboard.shortcuts.left.shortcut4.command": "rofi -show drun",
   "bar.layouts": {
-    "0": {
+    "1": {
       "left": [
         "dashboard",
         "workspaces"
