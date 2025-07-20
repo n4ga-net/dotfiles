@@ -1,0 +1,31 @@
+[pyprland]
+plugins = [
+  "magnify",
+  "scratchpads",
+]
+
+[scratchpads.term]
+animation = "fromTop"
+command = "ghostty --class=com.ghostty.dropterm"
+class = "com.ghostty.dropterm"
+size = "75% 60%"
+max_size = "75% 80%"
+margin = 50
+unfocus = "hide"
+
+[scratchpads.file]
+animation = "fromLeft"
+command = "ghostty --class=com.ghostty.yazi -e yazi ~/"
+class = "com.ghostty.yazi"
+size = "75% 60%"
+margin = 50
+unfocus = "hide"
+
+[scratchpads.volume]
+animation = "fromTop"
+command = "pavucontrol"
+class = "com.ghostty.pavucontrol"
+lazy = true
+size = "75% 60%"
+unfocus = "hide"
+margin = 10

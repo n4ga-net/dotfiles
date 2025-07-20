@@ -426,5 +426,9 @@
   "bar.autoHide": "fullscreen",
   "theme.bar.location": "top",
   "theme.bar.border.location": "none",
-  "theme.bar.opacity": 0
+  "theme.bar.opacity": 0,
+  "bar.customModules.storage.paths": [
+    "/"
+  ],
+  "bar.workspaces.ignored": "-\\d+"
 }
