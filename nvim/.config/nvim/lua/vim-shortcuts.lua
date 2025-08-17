@@ -50,3 +50,7 @@ vim.keymap.set({'n', 'v'}, '<Right>', '<Nop>')
 -- Move between buffers in bufferline
 vim.keymap.set('n', '<leader>bn', ':BufferLineCycleNext<CR>', { desc = "Next buffer" })
 vim.keymap.set('n', '<leader>bp', ':BufferLineCyclePrev<CR>', { desc = "Previous buffer" })
+
+-- Close buffers with bbye
+vim.keymap.set('n', '<leader>bc', '<cmd>Bdelete<CR>', { desc = "Close buffer (keep window layout)" })
+vim.keymap.set('n', '<leader>bC', '<cmd>Bwipeout<CR>', { desc = "Force close buffer (keep window layout)" })
