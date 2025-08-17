@@ -11,3 +11,6 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.wrap = false
 vim.opt.clipboard = 'unnamedplus'
+
+-- Confirm before closing with unsaved changes
+vim.o.confirm = true

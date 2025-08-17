@@ -46,3 +46,7 @@ vim.keymap.set({'n', 'v'}, '<Up>', '<Nop>')
 vim.keymap.set({'n', 'v'}, '<Down>', '<Nop>')
 vim.keymap.set({'n', 'v'}, '<Left>', '<Nop>')
 vim.keymap.set({'n', 'v'}, '<Right>', '<Nop>')
+
+-- Move between buffers in bufferline
+vim.keymap.set('n', '<leader>bn', ':BufferLineCycleNext<CR>', { desc = "Next buffer" })
+vim.keymap.set('n', '<leader>bp', ':BufferLineCyclePrev<CR>', { desc = "Previous buffer" })
