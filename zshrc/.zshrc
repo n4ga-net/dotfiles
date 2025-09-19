@@ -54,7 +54,10 @@ zinit light zsh-users/zsh-syntax-highlighting
 export MANPAGER='nvim +Man!'
 
 # Alias for Eza
-alias eza='eza --hyperlink'
+alias ls='eza --hyperlink --icons -g'
+
+# Alias for Bat
+alias cat='bat -p'
 
 # Init starship
 eval "$(starship init zsh)"
