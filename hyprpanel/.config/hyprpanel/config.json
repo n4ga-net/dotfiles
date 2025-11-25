@@ -37,6 +37,7 @@
       "middle": [],
       "right": [
         "systray",
+        "volume",
         "clock",
         "notifications"
       ]
