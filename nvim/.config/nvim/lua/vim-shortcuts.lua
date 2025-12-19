@@ -29,10 +29,6 @@ vim.keymap.set("n", "J", "mzJ`z", { desc = "Move line below to end of current li
 -- vim.keymap.set("v", "<leader>y", "\"+y", { desc = "Yank to clipboard" })
 -- vim.keymap.set("n", "<leader>Y", "\"+Y", { desc = "Yank line to clipboard" })
 
--- Obsidian
-vim.keymap.set('n', '<leader>nt', ':ObsidianTemplate<cr>', { desc = "Obsidian Template" })
-vim.keymap.set('n', '<leader>nn', ':ObsidianNewFromTemplate<cr>', { desc = "Obsidian New Note" })
-
 -- toggle line wrap with <leader>lw
 vim.keymap.set('n', '<leader>lw', ':set wrap!<cr>', { desc = "Toggle line wrap" })
 
