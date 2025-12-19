@@ -72,7 +72,7 @@ return {
 			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Go to references" })
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
       -- Shortcut that toggles diagnostics visability
-      vim.keymap.set("n", "<leader>td", function()
+      vim.keymap.set("n", "<leader>dt", function()
         local current = vim.diagnostic.config().virtual_text
         vim.diagnostic.config({ virtual_text = not current })
       end, { desc = "Toggle diagnostics" })
