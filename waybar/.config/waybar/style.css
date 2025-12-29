@@ -40,7 +40,8 @@
 @define-color time #434C5E;
 @define-color backlight #434C5E;
 @define-color nord_bg #434C5E;
-@define-color nord_bg_blue #546484;
+/* @define-color nord_bg_blue #546484; */
+@define-color nord_bg_blue #434C5E;
 @define-color nord_light #D8DEE9;
 @define-color nord_light_font #D8DEE9;
 @define-color nord_dark_font #434C5E;
@@ -63,8 +64,8 @@
 #waybar {
     background: transparent;
     color: @light;
-    font-family: "Cantarell", "Font Awesome 5 Pro";
-    font-size: 13px;
+    font-family: "MesloLGM Nerd Font", "Cantarell", "Font Awesome 5 Pro";
+    font-size: 14px;
     font-weight: bold;
 }
 
@@ -221,4 +222,3 @@
 #custom-gpu { background: @nord_bg; }
 #custom-weather { background: @mode; }
 #idle_inhibitor { background: @mode; }
-

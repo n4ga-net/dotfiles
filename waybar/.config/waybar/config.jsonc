@@ -1,7 +1,14 @@
 {
   "position": "top",
-  "modules-left": ["hyprland/workspaces"],
-  "modules-right": [ "tray", "hyprland/language", "pulseaudio", "clock"],
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "tray",
+    "hyprland/language",
+    "pulseaudio",
+    "clock"
+  ],
   "clock": {
     "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
@@ -18,32 +25,41 @@
     "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
     "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {time}",
     "format-full": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-    "format-icons": ["", "", "", "", ""],
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
     "tooltip-format": "{time}"
   },
   "network": {
-      "format-wifi": "{essid} ({signalStrength}%) ",
-      "format-ethernet": "{ipaddr}/{cidr} ",
-      "tooltip-format": "{ifname} via {gwaddr} ",
-      "format-linked": "{ifname} (No IP) ",
-      "format-disconnected": "Disconnected ⚠",
-      "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
   "pulseaudio": {
-      "format": "{icon}  {volume}%",
-      "format-muted": "",
-      "format-icons": {
-          "default": ["", "", " "]
-      },
-      "on-click": "pavucontrol"
+    "format": "{icon}  {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": [
+        "",
+        "",
+        " "
+      ]
+    },
+    "on-click": "pavucontrol"
   },
   "tray": {
-        // "icon-size": 21,
-        "spacing": 8
+    // "icon-size": 21,
+    "spacing": 8
   },
   "hyprland/language": {
-      "format": "<span size='13000' foreground='#89b4fa'>⌨ </span><span size='13000'>{short}</span>",
-      "tooltip": true
+    "format": "<span size='13000' foreground='#89b4fa'>⌨ </span><span size='13000'>{short}</span>",
+    "tooltip": true
   }
 }
-
