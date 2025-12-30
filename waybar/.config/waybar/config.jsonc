@@ -1,46 +1,20 @@
 {
   "position": "top",
   "modules-left": [
+    "custom/power",
     "hyprland/workspaces"
   ],
   "modules-right": [
     "tray",
     "hyprland/language",
     "pulseaudio",
-    "clock"
+    "group/connectivity",
+    "clock",
+    "custom/notifications"
   ],
   "clock": {
-    "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
+    "format": "<span foreground='#f5c2e7'>  </span>{:%a %d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-  },
-  "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "<span size='13000' foreground='#a6e3a1'>{icon} </span> {capacity}%",
-    "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {capacity}%",
-    "format-critical": "<span size='13000' foreground='#E38C8F'>{icon} </span> {capacity}%",
-    "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-    "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-    "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {time}",
-    "format-full": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "tooltip-format": "{time}"
-  },
-  "network": {
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "pulseaudio": {
     "format": "{icon}  {volume}%",
@@ -55,11 +29,57 @@
     "on-click": "pavucontrol"
   },
   "tray": {
-    // "icon-size": 21,
     "spacing": 8
   },
   "hyprland/language": {
-    "format": "<span size='13000' foreground='#89b4fa'>⌨ </span><span size='13000'>{short}</span>",
+    "format": "<span size='12000'>{short}</span>",
     "tooltip": true
+  },
+  "custom/notifications": {
+    "exec": "~/.config/waybar/scripts/dunst.sh",
+    "interval": 2,
+    "on-click": "dunstctl history-pop",
+    "on-click-middle": "dunstctl history-clear",
+    "on-click-right": "dunstctl set-paused toggle",
+    "tooltip": true
+  },
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "~/.config/waybar/scripts/powermenu.sh"
+  },
+  "bluetooth": {
+    "format": "",
+    "format-connected": "",
+    "format-disabled": "",
+    "tooltip-format": "{controller_alias}\n{num_connections} connected",
+    "on-click": "blueman-manager",
+    "interval": 5
+  },
+  "network": {
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰤮",
+    "tooltip-format-wifi": "  {ifname}\nIP: {ipaddr}/{cidr}\nGW: {gwaddr}\nSSID: {essid} ({signalStrength}%)\n\n{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "󰈀  {ifname}\nIP: {ipaddr}/{cidr}\nGW: {gwaddr}\n\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "spacing": 1
+  },
+  "group/connectivity": {
+    "orientation": "horizontal",
+    "modules": [
+      "network",
+      "bluetooth"
+    ]
   }
 }
+

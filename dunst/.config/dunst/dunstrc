@@ -5,7 +5,7 @@ follow = mouse
 width = (200, 420)
 height = (0, 500)
 origin = top-right
-offset = 18x18
+offset = (18, 18)
 scale = 0
 
 ### Appearance ###
@@ -21,7 +21,6 @@ show_age_threshold = 60
 padding = 14
 horizontal_padding = 14
 text_icon_padding = 10
-icon_padding = 0
 separator_height = 2
 separator_color = frame
 frame_width = 2

@@ -1,224 +1,229 @@
 @keyframes blink-warning {
-    70% {
-        color: @light;
-    }
-    to {
-        color: @light;
-        background-color: @warning;
-    }
+  70% { color: @light; }
+  to  { color: @light; background-color: @warning; }
 }
 
 @keyframes blink-critical {
-    70% {
-      color: @light;
-    }
-    to {
-        color: @light;
-        background-color: @critical;
-    }
+  70% { color: @light; }
+  to  { color: @light; background-color: @critical; }
 }
 
 /* -----------------------------------------------------------------------------
- * COLORS
+ * COLORS — ALL COLORS USED IN THIS FILE
  * -------------------------------------------------------------------------- */
 
-@define-color bg #2E3440;
-@define-color light #D8DEE9;
-@define-color warning #ebcb8b;
-@define-color critical #BF616A;
-@define-color mode #434C5E;
+@define-color bg                #2E3440;
+@define-color light             #D8DEE9;
+
+@define-color nord_bg_blue      #434C5E;
 @define-color workspacesfocused #4C566A;
-@define-color tray @workspacesfocused;
-@define-color sound #EBCB8B;
-@define-color network #5D7096;
-@define-color memory #546484;
-@define-color cpu #596A8D;
-@define-color temp #4D5C78;
-@define-color layout #5e81ac;
-@define-color battery #88c0d0;
-@define-color date #434C5E;
-@define-color time #434C5E;
-@define-color backlight #434C5E;
-@define-color nord_bg #434C5E;
-/* @define-color nord_bg_blue #546484; */
-@define-color nord_bg_blue #434C5E;
-@define-color nord_light #D8DEE9;
-@define-color nord_light_font #D8DEE9;
-@define-color nord_dark_font #434C5E;
+
+@define-color warning           #ebcb8b;
+@define-color critical          #BF616A;
+
+@define-color bt_idle           #f9e2af;
+@define-color bt_connected      #88C0D0;
+@define-color bt_disabled       #6c7086;
+
+@define-color net_connected     #a6e3a1;
+@define-color net_linked        #f9e2af;
+@define-color net_disconnected  #f38ba8;
+
+@define-color pa_muted_bg       #BF616A;
+@define-color pa_source_muted   #D08770;
 
 /* -----------------------------------------------------------------------------
  * GLOBAL RESET
  * -------------------------------------------------------------------------- */
 
 * {
-    border: none;
-    border-radius: 3px;
-    min-height: 0;
-    margin: 0.12em 0.3em;
+  border: none;
+  min-height: 0;
+}
+
+/* Automatically pill every module */
+#waybar .module {
+  margin: 0.12em 0.3em;
+  padding: 0.25em 0.6em;
+  border-radius: 3px;
 }
 
 /* -----------------------------------------------------------------------------
- * WAYBAR (free-floating pills)
+ * WAYBAR
  * -------------------------------------------------------------------------- */
 
 #waybar {
-    background: transparent;
-    color: @light;
-    font-family: "MesloLGM Nerd Font", "Cantarell", "Font Awesome 5 Pro";
-    font-size: 14px;
-    font-weight: bold;
+  background: transparent;
+  color: @light;
+  font-family: "MesloLGM Nerd Font", "Cantarell", "Font Awesome 5 Pro";
+  font-size: 14px;
+  font-weight: bold;
 }
 
 /* -----------------------------------------------------------------------------
  * MODULE PADDING
  * -------------------------------------------------------------------------- */
 
-#battery,
-#clock,
-#cpu,
-#custom-layout,
-#memory,
-#mode,
-#network,
-#pulseaudio,
-#temperature,
-#custom-alsa,
-#custom-pacman,
-#custom-weather,
-#custom-gpu,
 #tray,
-#backlight,
 #language,
-#custom-cpugovernor {
-    padding: 0.25em 0.6em;
+#pulseaudio,
+#clock,
+#custom-notifications,
+#custom-power {
+  padding: 0.25em 0.6em;
 }
 
 /* -----------------------------------------------------------------------------
- * BLINKING / STATES
+ * MODULE STYLES
  * -------------------------------------------------------------------------- */
 
-#mode,
-#memory,
-#temperature,
-#battery {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+#tray {
+  background: @nord_bg_blue;
 }
 
-#memory.critical,
-#cpu.critical,
-#temperature.critical,
-#battery.critical {
-    color: @critical;
-}
-
-#mode,
-#memory.critical,
-#temperature.critical,
-#battery.critical.discharging {
-    animation-name: blink-critical;
-    animation-duration: 2s;
-}
-
-#network.disconnected,
-#memory.warning,
-#cpu.warning,
-#temperature.warning,
-#battery.warning {
-    background: @warning;
-    color: @nord_dark_font;
-}
-
-#battery.warning.discharging {
-    animation-name: blink-warning;
-    animation-duration: 3s;
-}
-
-/* -----------------------------------------------------------------------------
- * MODULE COLORS
- * -------------------------------------------------------------------------- */
-
-#mode { background: @mode; }
-#network { background: @nord_bg_blue; }
-#memory { background: @memory; }
-#cpu { background: @nord_bg; color: #D8DEE9; }
-#cpu.critical { color: @nord_dark_font; }
-#temperature { background: @nord_bg; color: #D8DEE9; }
-#temperature.critical { background: @critical; }
-#custom-layout { background: @layout; }
-#battery { background: @battery; }
-#backlight { background: @backlight; }
-#clock { background: @nord_bg_blue; color: #D8DEE9; }
-#pulseaudio { background: @nord_bg_blue; color: #D8DEE9; }
-#pulseaudio.muted { background: #BF616A; color: #BF616A; }
-#pulseaudio.source-muted { background: #D08770; color: #D8DEE9; }
-#tray { background: #434C5E; }
 #language {
-    background: @nord_bg_blue;
-    color: #D8DEE9;
-    min-width: 40px;
-    padding: 1px 0.6em;
+  background: @nord_bg_blue;
+  color: @light;
+  min-width: 20px;
+  padding: 1px 0.6em;
 }
 
+#clock {
+  background: @nord_bg_blue;
+  color: @light;
+}
+
+#pulseaudio {
+  background: @nord_bg_blue;
+  color: @light;
+}
+
+#pulseaudio.muted {
+  background: @pa_muted_bg;
+  color: @pa_muted_bg;
+}
+
+#pulseaudio.source-muted {
+  background: @pa_source_muted;
+  color: @light;
+}
+
+#network {
+  padding: 0.0em 0.0em;
+}
+#bluetooth {
+  padding: 0.0em 0.0em;
+}
+#connectivity {
+  background: @nord_bg_blue;
+  color: @light;
+}
+#custom-power,
+#custom-notifications {
+  background: @nord_bg_blue;
+  color: @light;
+  font-weight: bold;
+}
+
+#custom-power {
+  min-width: 1.0rem;
+}
 /* -----------------------------------------------------------------------------
- * WORKSPACES — GROUP PILL + ACTIVE PILL
+ * WORKSPACES
  * -------------------------------------------------------------------------- */
 
 #workspaces {
-    background: @bg;
-    padding: 0 0.4em;
-    border-radius: 3px;
+  background: @bg;
+  padding: 0 0.4em;
+  border-radius: 3px;
 }
 
 #workspaces button {
-    font-weight: bold;
-    padding: 0 0.35em;
-    margin: 0.1em 0.15em;
-    opacity: 0.7;
-    background: transparent;
-    font-size: 1em;
+  font-weight: bold;
+  padding: 0 0.35em;
+  margin: 0.1em 0.15em;
+  opacity: 0.7;
+  background: transparent;
+  font-size: 1em;
 }
 
 #workspaces button.active,
 #workspaces button.focused {
-    background: @workspacesfocused;
-    color: #D8DEE9;
-    opacity: 1;
+  background: @workspacesfocused;
+  color: @light;
+  opacity: 1;
 }
 
 #workspaces button.urgent {
-    background: @critical;
-    color: @light;
-    opacity: 1;
+  background: @critical;
+  color: @light;
+  opacity: 1;
 }
 
 /* -----------------------------------------------------------------------------
- * MISC
+ * BLUETOOTH STATES
  * -------------------------------------------------------------------------- */
 
-#window {
-    margin: 0 40px;
-    font-weight: normal;
+#bluetooth {
+  color: @bt_idle;
+  font-size: 1.2em;
 }
 
-#bluetooth,
-#custom-gpu,
-#custom-weather,
-#custom-pacman,
-#custom-scratchpad-indicator,
-#idle_inhibitor {
-    font-weight: bold;
-    padding: 0.25em 0.6em;
+#bluetooth.connected {
+  color: @bt_connected;
 }
 
-#custom-pacman,
-#custom-scratchpad-indicator {
-    background: @nord_light;
-    color: @nord_dark_font;
+#bluetooth.disabled {
+  color: @bt_disabled;
 }
 
-#bluetooth { background: @nord_bg_blue; font-size: 1.2em; }
-#custom-gpu { background: @nord_bg; }
-#custom-weather { background: @mode; }
-#idle_inhibitor { background: @mode; }
+/* -----------------------------------------------------------------------------
+ * NETWORK STATES
+ * -------------------------------------------------------------------------- */
+
+#network {
+  font-size: 1.2em;
+}
+
+#network.wifi,
+#network.ethernet {
+  color: @net_connected;
+}
+
+#network.linked {
+  color: @net_linked;
+}
+
+#network.disconnected {
+  color: @net_disconnected;
+}
+
+/* -----------------------------------------------------------------------------
+ * CONNECTIVITY
+ * -------------------------------------------------------------------------- */
+/* --- CONNECTIVITY GROUP (container pill) --- */
+#connectivity {
+  background: @nord_bg_blue;
+  color: @light;
+
+  /* make it behave like other pills even if it isn't .module */
+  margin: 0.12em 0.3em;
+  padding: 0.25em 0.45em;
+  border-radius: 3px;
+}
+
+/* --- CHILD MODULES INSIDE CONNECTIVITY (tight spacing) --- */
+#connectivity #network,
+#connectivity #bluetooth {
+  /* kill the global .module spacing inside the group */
+  margin: 0;
+  padding: 0 0.5em;
+  background: transparent;
+  border-radius: 0;
+}
+
+/* optional: slightly smaller icons inside the group */
+#connectivity #network,
+#connectivity #bluetooth {
+  font-size: 1.25em; /* tweak to taste */
+}
