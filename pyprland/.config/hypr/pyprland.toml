@@ -6,7 +6,7 @@ plugins = [
 
 [scratchpads.term]
 animation = "fromTop"
-command = "ghostty +new-window --class=com.ghostty.dropterm"
+command = "ghostty --class=com.ghostty.dropterm"
 class = "com.ghostty.dropterm"
 size = "75% 60%"
 max_size = "75% 80%"
@@ -15,7 +15,7 @@ unfocus = "hide"
 
 [scratchpads.file]
 animation = "fromLeft"
-command = "ghostty +new-window --class=com.ghostty.yazi -e yazi ~/"
+command = "ghostty --class=com.ghostty.yazi -e yazi ~/"
 class = "com.ghostty.yazi"
 size = "75% 60%"
 margin = 10
