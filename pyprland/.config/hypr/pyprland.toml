@@ -24,7 +24,16 @@ unfocus = "hide"
 [scratchpads.volume]
 animation = "fromTop"
 command = "pavucontrol"
-class = "com.ghostty.pavucontrol"
+class = "com.pulseaudio.pavucontrol"
+lazy = true
+size = "75% 60%"
+unfocus = "hide"
+margin = 10
+
+[scratchpads.bluetooth]
+animation = "fromTop"
+command = "blueman-manager"
+class = "com.blueman.bluetooth"
 lazy = true
 size = "75% 60%"
 unfocus = "hide"
