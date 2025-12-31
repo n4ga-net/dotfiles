@@ -12,6 +12,15 @@ return {
       "python",
       "json",
       "xml",
+      "yaml",
+      "lua",
+      "vim",
+      "dockerfile",
+      "zsh",
+      "html",
+      "css",
+      "javascript",
+      "typescript"
     },
     sync_install = false,        -- install parsers asynchronously
     auto_install = true,         -- install missing parsers on buffer enter
