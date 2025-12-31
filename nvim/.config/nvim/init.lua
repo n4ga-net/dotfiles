@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
+require("lazy").setup("plugins")
 require("vim-shortcuts")
 require("float-terminal")
-require("lazy").setup("plugins")
 
