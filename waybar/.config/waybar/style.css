@@ -241,7 +241,7 @@
 
 /* Kill per-module “pill” spacing INSIDE the group */
 #system .module {
-  margin: 0em;
+  margin: 0em 0.5em;
   padding: 0em;
   background: transparent;
   border-radius: 0;
