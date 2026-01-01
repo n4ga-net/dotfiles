@@ -7,6 +7,7 @@
   "modules-right": [
     "tray",
     "hyprland/language",
+    "group/system",
     "pulseaudio",
     "group/connectivity",
     "clock",
@@ -80,6 +81,61 @@
       "network",
       "bluetooth"
     ]
+  },
+  "group/system": {
+    "orientation": "horizontal",
+    "drawer": {
+      "click-to-reveal": true,
+      "transition-duration": 250,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "cpu",              // leader (always visible)
+      "disk#root",         // revealed on click
+      "memory",           // revealed on click
+      "temperature#cpu"  // revealed on click
+    ]
+  },
+  "cpu": {
+    "interval": 2,
+    "format": " {icon}",
+    "format-icons": ["▁","▂","▃","▄","▅","▆","▇","█"],
+    "tooltip": true
+    // CPU tooltip text isn’t configurable in the cpu module docs; tooltip on/off is.
+    // (So you’ll get Waybar’s default CPU tooltip.) :contentReference[oaicite:2]{index=2}
+  },
+  "temperature#cpu": {
+    "interval": 2,
+    // Pick ONE of the two approaches below:
+    // 1) thermal-zone approach (simple, but sometimes not “CPU package”):
+    // "thermal-zone": 0,
+    // 2) hwmon-path approach (usually best for “CPU package” temp):
+    // You can provide an array; Waybar uses the first valid one. :contentReference[oaicite:3]{index=3}
+    "hwmon-path": [
+      "/sys/class/hwmon/hwmon2/temp1_input",
+      "/sys/class/thermal/thermal_zone0/temp"
+    ],
+    "critical-threshold": 90,
+    "warning-threshold": 80,
+    "format": " {temperatureC}°C",
+    "format-warning": " {temperatureC}°C",
+    "format-critical": " {temperatureC}°C",
+    "tooltip": true,
+    "tooltip-format": "CPU temp: {temperatureC}°C"
+  },
+  "memory": {
+    "interval": 5,
+    "format": " {percentage}%",
+    "tooltip": true
+    // Memory module supports lots of format replacements (used/total/avail/swap, etc.) :contentReference[oaicite:4]{index=4}
+  },
+  "disk#root": {
+    "path": "/",
+    "interval": 30,
+    "format": "󰋊 {percentage_used}%",
+    "tooltip": true,
+    "tooltip-format": "{path}\nUsed: {used}/{total} ({percentage_used}%)\nFree: {free} ({percentage_free}%)"
+    // tooltip-format + replacements are documented for disk :contentReference[oaicite:5]{index=5}
   }
 }
 

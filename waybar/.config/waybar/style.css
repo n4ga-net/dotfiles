@@ -114,6 +114,7 @@
 #bluetooth {
   padding: 0.0em 0.0em;
 }
+#system,
 #connectivity {
   background: @nord_bg_blue;
   color: @light;
