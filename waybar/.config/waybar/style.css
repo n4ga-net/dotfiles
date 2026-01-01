@@ -228,3 +228,21 @@
 #connectivity #bluetooth {
   font-size: 1.25em; /* tweak to taste */
 }
+
+#system {
+  background: @nord_bg_blue;
+  color: @light;
+  font-size: 1.2em;
+  /* make it behave like other pills even if it isn't .module */
+  margin: 0.12em 0.3em;
+  padding: 0.25em 0.45em;
+  border-radius: 3px;
+}
+
+/* Kill per-module “pill” spacing INSIDE the group */
+#system .module {
+  margin: 0em;
+  padding: 0em;
+  background: transparent;
+  border-radius: 0;
+}

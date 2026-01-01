@@ -9,7 +9,6 @@
     "hyprland/language",
     "group/system",
     "pulseaudio",
-    "group/connectivity",
     "clock",
     "custom/notifications"
   ],
