@@ -39,8 +39,6 @@ vim.keymap.set("n", "<leader>sc", ":nohl<CR>", { desc = "Clear search highlights
 -- Paste without overwriting clipboard
 vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Paste preserved" })
 
---
-
 -- =============================================================================
 -- J/K line movement
 -- =============================================================================
@@ -94,11 +92,9 @@ vim.keymap.set("n", "<leader>bC", "<cmd>Bwipeout<CR>", { desc = "Force close buf
 -- =============================================================================
 -- <leader>g Go To: Plugins
 -- =============================================================================
--- Open Lazy
+-- Keybinds to open plugin UI's
 vim.keymap.set("n", "<leader>gl", ":Lazy<CR>", { desc = "Lazy" })
--- Open Mason
 vim.keymap.set("n", "<leader>gm", ":Mason<CR>", { desc = "Mason" })
--- Open LazyGit
 vim.keymap.set("n", "<leader>gg", ":LazyGit<cr>", { desc = "LazyGit" })
 
 -- =============================================================================
@@ -110,6 +106,7 @@ vim.keymap.set("n", "<leader>cd", vim.lsp.buf.definition, { desc = "Go to defini
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.references, { desc = "Go to references" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format" })
+
 -- Shortcut that toggles diagnostics visability
 vim.keymap.set("n", "<leader>td", function()
 	local current = vim.diagnostic.config().virtual_text
