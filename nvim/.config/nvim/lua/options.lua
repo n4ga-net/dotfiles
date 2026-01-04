@@ -10,7 +10,11 @@ vim.cmd("set shiftwidth=2")
 vim.opt.number = true
 vim.opt.relativenumber = false
 vim.opt.wrap = false
-vim.opt.clipboard = 'unnamedplus'
+-- vim.opt.clipboard = 'unnamedplus'
+
+-- Improve search
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 
 -- Confirm before closing with unsaved changes
 vim.o.confirm = true

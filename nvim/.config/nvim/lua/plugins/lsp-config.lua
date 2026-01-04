@@ -66,16 +66,6 @@ return {
           source = "always",
         },
       })
-			-- (optional) keymaps – these are global, like in your original config
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show hover information" })
-			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Go to references" })
-			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
-      -- Shortcut that toggles diagnostics visability
-      vim.keymap.set("n", "<leader>dt", function()
-        local current = vim.diagnostic.config().virtual_text
-        vim.diagnostic.config({ virtual_text = not current })
-      end, { desc = "Toggle diagnostics" })
 		end,
 	},
 	{
@@ -105,7 +95,6 @@ return {
 					-- null_ls.builtins.diagnostics.eslint_d,
 				},
 			})
-			vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Format" })
 		end,
 	},
 }
