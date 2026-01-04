@@ -1,32 +1,13 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  lazy = false,
   build = ":TSUpdate",
-  event = { "BufReadPost", "BufNewFile" },
-
-  -- This makes Lazy do: require("nvim-treesitter.configs").setup(opts)
-  main = "nvim-treesitter.configs",
-  opts = {
-    auto_install = true,
-    highlight = { enable = true },
-    indent = { enable = true },
-    ensure_installed = {
-      "bash",
-      "dockerfile",
-      "html",
-      "javascript",
-      "json",
-      "lua",
-      "markdown",
-      "markdown_inline",
-      "powershell",
-      "python",
-      "query",
-      "typescript",
-      "vim",
-      "vimdoc",
-      "xml",
-      "yaml",
-    },
-  },
+  config = function()
+    require("nvim-treesitter").setup({
+      auto_install = true,
+      highlight = { enable = true },
+      indent = { enable = true },
+    })
+  end,
 }
 
