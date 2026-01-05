@@ -27,3 +27,8 @@ vim.api.nvim_create_autocmd("FileType", {
     pcall(vim.treesitter.start, ev.buf, lang)
   end,
 })
+
+-- Use OSC52 clipboard over SSH 
+if vim.env.SSH_TTY or vim.env.SSH_CONNECTION then
+  vim.g.clipboard = "osc52"
+end
