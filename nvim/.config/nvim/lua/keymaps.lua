@@ -24,8 +24,8 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up half page" })
 -- Search navigation
 -- =============================================================================
 -- make search with / better
-vim.keymap.set("n", "<C-n>", "nzzzzv", { desc = "Search next" })
-vim.keymap.set("n", "<C-N>", "Nzzzzv", { desc = "Search previous" })
+vim.keymap.set("n", "n", "nzzzv", { desc = "Search next (centered)", nowait = true })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Search prev (centered)", nowait = true })
 
 -- =============================================================================
 -- <leader> Search

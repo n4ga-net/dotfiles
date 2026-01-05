@@ -13,7 +13,7 @@ vim.opt.wrap = false
 -- vim.opt.clipboard = 'unnamedplus'
 
 -- Improve search
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 -- Confirm before closing with unsaved changes
