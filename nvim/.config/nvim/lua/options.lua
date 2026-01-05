@@ -18,3 +18,12 @@ vim.opt.incsearch = true
 
 -- Confirm before closing with unsaved changes
 vim.o.confirm = true
+
+-- automatic attach tree-sitter if we find a parser
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function(ev)
+    local ft = vim.bo[ev.buf].filetype
+    local lang = vim.treesitter.language.get_lang(ft) or ft
+    pcall(vim.treesitter.start, ev.buf, lang)
+  end,
+})
