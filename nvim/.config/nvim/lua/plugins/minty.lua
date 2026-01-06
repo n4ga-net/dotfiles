@@ -1,6 +1,7 @@
 return {
   {
     "nvzone/minty",
+    cmd = { "Shades", "Huefy" },
     config = function()
       require("minty").setup({
         show_palette = true,
@@ -12,5 +13,5 @@ return {
   {
     "nvzone/volt",
     lazy = true
-  },
+  }
 }

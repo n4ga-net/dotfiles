@@ -96,7 +96,8 @@ vim.keymap.set("n", "<leader>bC", "<cmd>Bwipeout<CR>", { desc = "Force close buf
 vim.keymap.set("n", "<leader>gl", ":Lazy<CR>", { desc = "Lazy" })
 vim.keymap.set("n", "<leader>gm", ":Mason<CR>", { desc = "Mason" })
 vim.keymap.set("n", "<leader>gg", ":LazyGit<cr>", { desc = "LazyGit" })
-
+vim.keymap.set("n", "<leader>gc", ":Huefy<cr>", { desc = "Pick Color (Huefy)" })
+vim.keymap.set("n", "<leader>gs", ":Shades<cr>", { desc = "Pick Color (Shades)" })
 -- =============================================================================
 -- LSP Keymaps
 -- =============================================================================

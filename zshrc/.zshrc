@@ -1,7 +1,7 @@
 #
 # Zsh config
 #
-
+color="#ffb3df"
 # History settings
 HISTFILE=~/.histfile
 HISTSIZE=1000
