@@ -1,7 +1,6 @@
-**
+/**
  * Nordic rofi theme
  * Adapted by undiabler <undiabler@gmail.com>
- * Continued edit by Naga
  *
  * Nord Color palette imported from https://www.nordtheme.com/
  *
@@ -136,4 +135,3 @@ textbox {
     dynamic: true;
     text-color: @backlight;
 }
-
