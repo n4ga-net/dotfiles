@@ -39,3 +39,6 @@ vim.filetype.add({
     mobileconfig = "xml",
   },
 })
+
+-- Minimize cmd line
+vim.opt.cmdheight = 0
