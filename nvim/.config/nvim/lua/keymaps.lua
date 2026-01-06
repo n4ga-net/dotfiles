@@ -67,7 +67,7 @@ vim.keymap.set("n", "<leader>tw", ":set wrap!<cr>", { desc = "Toggle line wrap" 
 -- Set top folder in nvimtree
 vim.keymap.set("n", "<leader>tf", function()
 	require("nvim-tree.api").tree.change_root_to_node()
-end, { desc = "Set top folder in nvim-tree" })
+end, { desc = "Set top folder in nvi:m-tree" })
 
 -- =============================================================================
 -- Arrow keys disabled

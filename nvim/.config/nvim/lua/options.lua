@@ -32,3 +32,10 @@ vim.api.nvim_create_autocmd("FileType", {
 if vim.env.SSH_TTY or vim.env.SSH_CONNECTION then
   vim.g.clipboard = "osc52"
 end
+
+-- Ensure .mobileconfig is handled as XML
+vim.filetype.add({
+  extension = {
+    mobileconfig = "xml",
+  },
+})

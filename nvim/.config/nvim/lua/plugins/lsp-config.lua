@@ -51,7 +51,6 @@ return {
 					capabilities = capabilities,
 				})
 			end
-
 			-- enable all these servers
 			vim.lsp.enable(servers)
         -- Make diagnostics visible
