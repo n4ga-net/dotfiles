@@ -62,14 +62,6 @@ vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Yank line to clipboard" })
 vim.keymap.set("n", "<leader>tw", ":set wrap!<cr>", { desc = "Toggle line wrap" })
 
 -- =============================================================================
--- <leader> Tree
--- =============================================================================
--- Set top folder in nvimtree
-vim.keymap.set("n", "<leader>tf", function()
-	require("nvim-tree.api").tree.change_root_to_node()
-end, { desc = "Set top folder in nvi:m-tree" })
-
--- =============================================================================
 -- Arrow keys disabled
 -- =============================================================================
 -- Disable arrow keys in normal, insert, and visual modes

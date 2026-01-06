@@ -12,7 +12,7 @@ return {
         names = false,
         css = true,
         css_fn = true,
-        mode = "foreground", -- try "foreground" if you prefer
+        mode = "background", -- try "foreground" if you prefer
       })
     end,
   }
