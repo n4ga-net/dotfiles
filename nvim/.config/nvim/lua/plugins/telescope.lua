@@ -4,8 +4,25 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       local builtin = require("telescope.builtin")
-      vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Find Files" })
-      vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Grep" })
+      vim.keymap.set("n", "<leader>ff", function()
+        builtin.find_files({
+          hidden = true,          -- <-- descend into .config, etc
+          follow = false,          -- (optional) follow symlinks
+          no_ignore = true,       -- (optional) ignore .gitignore/.ignore
+          no_ignore_parent = true -- (optional) also ignore parent ignore files
+        })
+      end, { desc = "Find Files (repo incl. hidden)" })
+
+      vim.keymap.set("n", "<leader>fg", function()
+        builtin.live_grep({
+          additional_args = function()
+            return {
+              "--hidden",          -- grep inside hidden dirs
+              "--glob", "!.git/*", -- don’t spam .git
+            }
+          end,
+        })
+      end, { desc = "Grep (repo incl. hidden)" })
     end
   },
   {
