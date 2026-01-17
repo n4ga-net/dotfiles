@@ -1,3 +1,7 @@
+/* -----------------------------------------------------------------------------
+ * ANIMATIONS
+ * -------------------------------------------------------------------------- */
+
 @keyframes blink-warning {
   70% { color: @light; }
   to  { color: @light; background-color: @warning; }
@@ -9,7 +13,7 @@
 }
 
 /* -----------------------------------------------------------------------------
- * COLORS — ALL COLORS USED IN THIS FILE
+ * COLORS
  * -------------------------------------------------------------------------- */
 
 @define-color bg                #2E3440;
@@ -41,98 +45,32 @@
   min-height: 0;
 }
 
-/* Automatically pill every module */
-#waybar .module {
-  margin: 0.12em 0.3em;
-  padding: 0.0em 0.5em;
-  border-radius: 3px;
-}
-
 /* -----------------------------------------------------------------------------
- * WAYBAR
+ * WAYBAR WINDOW
  * -------------------------------------------------------------------------- */
 
 #waybar {
   background: transparent;
   color: @light;
   font-family: "MesloLGM Nerd Font", "Cantarell", "Font Awesome 5 Pro";
-  font-size: 14px;
+  font-size: 0.875em;
   font-weight: bold;
 }
 
 /* -----------------------------------------------------------------------------
- * MODULE PADDING
+ * UNIVERSAL PILL STYLING FOR ALL MODULES
+ * This applies consistent margin, padding, and border-radius to every module.
+ * Adjust these values to change spacing for all pills at once.
  * -------------------------------------------------------------------------- */
 
-#language,
-#pulseaudio,
-#clock,
-#custom-notifications,
-#custom-power {
-  padding: 0.0em 0.5em;
-}
-
-#custom-notifications {
-  padding-right: 0.5em;
-}
-
-#custom-power {
-  padding-left: 0.5em;
-}
-
-/* -----------------------------------------------------------------------------
- * MODULE STYLES
- * -------------------------------------------------------------------------- */
-
-/* Standalone tray styling removed - now handled by #tray-group */
-
-#language {
-  background: @nord_bg_blue;
-  color: @light;
-  min-width: 20px;
-  padding: 0.0em 0.5em;
-}
-
-#clock {
+.module {
+  margin: 0.1em 0.2em;
+  padding: 0 0.5em;
+  border-radius: 0.2em;
   background: @nord_bg_blue;
   color: @light;
 }
 
-#pulseaudio {
-  background: @nord_bg_blue;
-  color: @light;
-}
-
-#pulseaudio.muted {
-  background: @pa_muted_bg;
-  color: @pa_muted_bg;
-}
-
-#pulseaudio.source-muted {
-  background: @pa_source_muted;
-  color: @light;
-}
-
-#network {
-  padding: 0.0em 0.0em;
-}
-#bluetooth {
-  padding: 0.0em 0.0em;
-}
-#connectivity {
-  background: @nord_bg_blue;
-  color: @light;
-}
-#custom-power,
-#custom-notifications {
-  background: @nord_bg_blue;
-  color: @light;
-  font-weight: bold;
-}
-
-#custom-power {
-  min-width: 1.0rem;
-}
 /* -----------------------------------------------------------------------------
  * WORKSPACES
  * -------------------------------------------------------------------------- */
@@ -140,13 +78,12 @@
 #workspaces {
   background: @bg;
   padding: 0 0.2em;
-  border-radius: 3px;
 }
 
 #workspaces button {
   font-weight: bold;
-  padding: 0 0.35em;
-  margin: 0.0em 0.15em;
+  padding: 0 0.3em;
+  margin: 0 0.1em;
   opacity: 0.7;
   background: transparent;
   font-size: 1em;
@@ -166,137 +103,112 @@
 }
 
 /* -----------------------------------------------------------------------------
- * BLUETOOTH STATES
+ * CUSTOM POWER
  * -------------------------------------------------------------------------- */
 
-#bluetooth {
-  color: @bt_idle;
-  font-size: 1.2em;
-}
-
-#bluetooth.connected {
-  color: @bt_connected;
-}
-
-#bluetooth.disabled {
-  color: @bt_disabled;
+#custom-power {
+  min-width: 1em;
 }
 
 /* -----------------------------------------------------------------------------
- * NETWORK STATES
+ * LANGUAGE
  * -------------------------------------------------------------------------- */
 
-#network {
-  font-size: 1.2em;
-}
-
-#network.wifi,
-#network.ethernet {
-  color: @net_connected;
-}
-
-#network.linked {
-  color: @net_linked;
-}
-
-#network.disconnected {
-  color: @net_disconnected;
+#language {
+  min-width: 1.4em;
 }
 
 /* -----------------------------------------------------------------------------
- * CONNECTIVITY
+ * PULSEAUDIO
  * -------------------------------------------------------------------------- */
-/* --- CONNECTIVITY GROUP (container pill) --- */
-#connectivity {
-  background: @nord_bg_blue;
+
+#pulseaudio.muted {
+  background: @pa_muted_bg;
+  color: @pa_muted_bg;
+}
+
+#pulseaudio.source-muted {
+  background: @pa_source_muted;
   color: @light;
-
-  /* make it behave like other pills even if it isn't .module */
-  margin: 0.12em 0.3em;
-  padding: 0.0em 0.45em;
-  border-radius: 3px;
 }
 
-/* --- CHILD MODULES INSIDE CONNECTIVITY (tight spacing) --- */
-#connectivity #network,
-#connectivity #bluetooth {
-  /* kill the global .module spacing inside the group */
+/* -----------------------------------------------------------------------------
+ * BATTERY STATES
+ * -------------------------------------------------------------------------- */
+
+#battery.warning:not(.charging) {
+  background: @warning;
+  color: @bg;
+}
+
+#battery.critical:not(.charging) {
+  background: @critical;
+  color: @light;
+  animation-name: blink-critical;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* -----------------------------------------------------------------------------
+ * SYSTEM GROUP (cpu, memory, disk, temperature)
+ * The group container acts as a pill; child modules have no extra spacing.
+ * -------------------------------------------------------------------------- */
+
+#system {
+  background: @bg;
+  margin: 0.1em 0.2em;
+  padding: 0;
+  border-radius: 0.2em;
+}
+
+#system .module {
   margin: 0;
   padding: 0 0.5em;
   background: transparent;
   border-radius: 0;
 }
 
-/* optional: slightly smaller icons inside the group */
-#connectivity #network,
-#connectivity #bluetooth {
-  font-size: 1.2em; /* tweak to taste */
-}
-
-/* -----------------------------------------------------------------------------
- * SYSTEM MONITOR
- * -------------------------------------------------------------------------- */
-#system {
-  background: @bg;
-  color: @light;
-  font-size: 1.0em;
-  /* make it behave like other pills even if it isn't .module */
-  margin: 0.12em 0.3em;
-  padding: 0.0em 0.0em;
-  border-radius: 3px;
-}
-
+/* The leader (cpu) gets pill background */
 #system #cpu {
-  font-size: 1.2em;
   background: @nord_bg_blue;
-  margin: 0.0em 0.0em;
-  padding: 0.0em 0.5em;
-  padding-right: 0.6em;
-  border-radius: 3px;
+  border-radius: 0.2em;
+  font-size: 1.2em;
 }
-/* --- CHILD MODULES INSIDE SYSTEM (tight spacing) --- */
-#system .module {
-  margin: 0em 0.5em;
-  padding: 0.0em 0em;
+
+/* Revealed children share the group background */
+#system #memory,
+#system #disk,
+#system #temperature {
   background: @bg;
-  border-radius: 0;
 }
 
 /* -----------------------------------------------------------------------------
  * TRAY GROUP
  * -------------------------------------------------------------------------- */
+
 #tray-group {
   background: @bg;
-  color: @light;
-  margin: 0.12em 0.3em;
-  padding: 0.0em 0.0em;
-  border-radius: 3px;
+  margin: 0.1em 0.2em;
+  padding: 0;
+  border-radius: 0.2em;
 }
 
-/* The drawer container that wraps revealed content */
-#tray-group .drawer {
-  background: @bg;
-  border-radius: 3px;
+#tray-group .module {
+  margin: 0;
+  padding: 0 0.5em;
+  background: transparent;
+  border-radius: 0;
 }
 
 #tray-group #custom-tray-icon {
-  font-size: 1.2em;
   background: @nord_bg_blue;
-  margin: 0.0em 0.0em;
-  padding: 0.0em 0.5em;
-  padding-right: 0.6em;
-  border-radius: 3px;
-}
-
-/* --- CHILD MODULES INSIDE TRAY GROUP (tight spacing) --- */
-#tray-group .module {
-  margin: 0em 0.5em;
-  padding: 0.0em 0em;
-  background: @bg;
-  border-radius: 0;
+  border-radius: 0.2em;
+  font-size: 1.2em;
 }
 
 #tray-group #tray {
   background: @bg;
-  padding: 0 0.4em;
+  padding: 0 0.25em;
 }
