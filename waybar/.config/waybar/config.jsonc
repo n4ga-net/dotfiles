@@ -5,7 +5,7 @@
     "hyprland/workspaces"
   ],
   "modules-right": [
-    "tray",
+    "group/tray",
     "hyprland/language",
     "group/system",
     "pulseaudio",
@@ -17,7 +17,7 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
+    "format": "{icon} {volume}%",
     "format-muted": "",
     "format-icons": {
       "default": [
@@ -26,10 +26,26 @@
         " "
       ]
     },
-    "on-click": "pypr toggle volume"
+    "on-click": "~/.config/waybar/scripts/volumemenu.sh"
   },
   "tray": {
     "spacing": 8
+  },
+  "group/tray": {
+    "orientation": "horizontal",
+    "drawer": {
+      "click-to-reveal": true,
+      "transition-duration": 250,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/tray-icon",
+      "tray"
+    ]
+  },
+  "custom/tray-icon": {
+    "format": "󰀻",
+    "tooltip": false
   },
   "hyprland/language": {
     "format": "<span size='12000'>{short}</span>",
@@ -98,7 +114,7 @@
   "cpu": {
     "interval": 2,
     "format": " {icon}",
-    "format-icons": ["▁","▂","▃","▄","▅","▆","▇","█"],
+    "format-icons": ["󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
     "tooltip": true
     // CPU tooltip text isn’t configurable in the cpu module docs; tooltip on/off is.
     // (So you’ll get Waybar’s default CPU tooltip.) :contentReference[oaicite:2]{index=2}
@@ -124,7 +140,7 @@
   },
   "memory": {
     "interval": 5,
-    "format": " {percentage}%",
+    "format": "  {percentage}%",
     "tooltip": true
     // Memory module supports lots of format replacements (used/total/avail/swap, etc.) :contentReference[oaicite:4]{index=4}
   },

@@ -1,0 +1,99 @@
+/**
+ * Audio Dropdown Theme
+ * Compact dropdown for waybar audio device selection
+ * No search bar, Nord colors
+ */
+
+/* Nord colors */
+* {
+    nord0: #2e3440;
+    nord1: #3b4252;
+    nord2: #434c5e;
+    nord3: #4c566a;
+    nord4: #d8dee9;
+    nord5: #e5e9f0;
+    nord6: #eceff4;
+    nord7: #8fbcbb;
+    nord8: #88c0d0;
+    nord9: #81a1c1;
+    nord10: #5e81ac;
+
+    background-color: transparent;
+    text-color: @nord4;
+}
+
+window {
+    location: north;
+    anchor: north;
+    y-offset: 32px;
+    width: 380px;
+    background-color: @nord0;
+    border: 1px;
+    border-color: @nord3;
+    border-radius: 0 0 8px 8px;
+    padding: 0;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [ listview ];
+    spacing: 0;
+}
+
+inputbar {
+    enabled: false;
+}
+
+listview {
+    background-color: transparent;
+    columns: 1;
+    lines: 10;
+    dynamic: true;
+    fixed-height: false;
+    scrollbar: false;
+    padding: 4px 0;
+    spacing: 2px;
+}
+
+element {
+    background-color: transparent;
+    text-color: @nord4;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @nord4;
+}
+
+element selected.normal {
+    background-color: @nord2;
+    text-color: @nord6;
+    border-radius: 4px;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: @nord4;
+}
+
+/* Section headers - match elements starting with "─" */
+element normal.active,
+element alternate.active {
+    background-color: @nord1;
+    text-color: @nord5;
+    padding: 6px 16px;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+    text-transform: none;
+}
+
+scrollbar {
+    enabled: false;
+}

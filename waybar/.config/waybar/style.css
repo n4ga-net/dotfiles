@@ -64,7 +64,6 @@
  * MODULE PADDING
  * -------------------------------------------------------------------------- */
 
-#tray,
 #language,
 #pulseaudio,
 #clock,
@@ -85,9 +84,7 @@
  * MODULE STYLES
  * -------------------------------------------------------------------------- */
 
-#tray {
-  background: @nord_bg_blue;
-}
+/* Standalone tray styling removed - now handled by #tray-group */
 
 #language {
   background: @nord_bg_blue;
@@ -122,7 +119,6 @@
 #bluetooth {
   padding: 0.0em 0.0em;
 }
-#system,
 #connectivity {
   background: @nord_bg_blue;
   color: @light;
@@ -237,20 +233,70 @@
   font-size: 1.25em; /* tweak to taste */
 }
 
+/* -----------------------------------------------------------------------------
+ * SYSTEM MONITOR
+ * -------------------------------------------------------------------------- */
 #system {
-  background: @nord_bg_blue;
+  background: @bg;
   color: @light;
-  font-size: 1.2em;
+  font-size: 1.0em;
   /* make it behave like other pills even if it isn't .module */
   margin: 0.12em 0.3em;
-  padding: 0.25em 0.45em;
+  padding: 0.0em 0.0em;
   border-radius: 3px;
 }
 
-/* Kill per-module “pill” spacing INSIDE the group */
+#system #cpu {
+  font-size: 1.2em;
+  background: @nord_bg_blue;
+  margin: 0.0em 0.0em;
+  padding: 0.0em 0.5em;
+  padding-right: 0.6em;
+  border-radius: 3px;
+}
+/* --- CHILD MODULES INSIDE SYSTEM (tight spacing) --- */
 #system .module {
   margin: 0em 0.5em;
-  padding: 0em;
-  background: transparent;
+  padding: 0.25em 0em;
+  background: @bg;
   border-radius: 0;
+}
+
+/* -----------------------------------------------------------------------------
+ * TRAY GROUP
+ * -------------------------------------------------------------------------- */
+#tray-group {
+  background: @bg;
+  color: @light;
+  margin: 0.12em 0.3em;
+  padding: 0.0em 0.0em;
+  border-radius: 3px;
+}
+
+/* The drawer container that wraps revealed content */
+#tray-group .drawer {
+  background: @bg;
+  border-radius: 3px;
+}
+
+#custom-tray-icon {
+  font-size: 1.2em;
+  background: @nord_bg_blue;
+  margin: 0.0em 0.0em;
+  padding: 0.0em 0.5em;
+  padding-right: 0.6em;
+  border-radius: 3px;
+}
+
+/* --- CHILD MODULES INSIDE TRAY GROUP (tight spacing) --- */
+#tray-group .module {
+  margin: 0em 0.5em;
+  padding: 0.25em 0em;
+  background: @bg;
+  border-radius: 0;
+}
+
+#tray-group #tray {
+  background: @bg;
+  padding: 0 0.4em;
 }
