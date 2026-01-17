@@ -136,9 +136,12 @@
   "cpu": {
     "interval": 2,
     "format": " {usage}%",
+    "states": {
+      "warning": 50,
+      "high": 75,
+      "critical": 90
+    },
     "tooltip": true
-    // CPU tooltip text isn’t configurable in the cpu module docs; tooltip on/off is.
-    // (So you’ll get Waybar’s default CPU tooltip.) :contentReference[oaicite:2]{index=2}
   },
   "temperature#cpu": {
     "interval": 2,
@@ -161,16 +164,24 @@
   },
   "memory": {
     "interval": 5,
-    "format": "  {percentage}%",
+    "format": " {percentage}%",
+    "states": {
+      "warning": 50,
+      "high": 75,
+      "critical": 90
+    },
     "tooltip": true
-    // Memory module supports lots of format replacements (used/total/avail/swap, etc.) :contentReference[oaicite:4]{index=4}
   },
   "disk#root": {
     "path": "/",
     "interval": 30,
     "format": "󰋊 {percentage_used}%",
+    "states": {
+      "warning": 60,
+      "high": 80,
+      "critical": 90
+    },
     "tooltip": true,
     "tooltip-format": "{path}\nUsed: {used}/{total} ({percentage_used}%)\nFree: {free} ({percentage_free}%)"
-    // tooltip-format + replacements are documented for disk :contentReference[oaicite:5]{index=5}
   }
 }

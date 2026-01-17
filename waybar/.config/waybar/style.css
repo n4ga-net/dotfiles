@@ -235,3 +235,30 @@
   background: @bg;
   padding: 0 0.25em;
 }
+
+/* -----------------------------------------------------------------------------
+ * SYSTEM DRAWER MODULE STATES (green → yellow → orange → red)
+ * -------------------------------------------------------------------------- */
+
+/* CPU states */
+#system #cpu { color: @light; }
+#system #cpu.warning { color: @cpu_medium; }
+#system #cpu.high { color: @cpu_high; }
+#system #cpu.critical { color: @cpu_critical; }
+
+/* Memory states */
+#system #memory { color: @light; }
+#system #memory.warning { color: @cpu_medium; }
+#system #memory.high { color: @cpu_high; }
+#system #memory.critical { color: @cpu_critical; }
+
+/* Disk states */
+#system #disk { color: @light; }
+#system #disk.warning { color: @cpu_medium; }
+#system #disk.high { color: @cpu_high; }
+#system #disk.critical { color: @cpu_critical; }
+
+/* Temperature states */
+#system #temperature { color: @light; }
+#system #temperature.warning { color: @cpu_high; }
+#system #temperature.critical { color: @cpu_critical; }
