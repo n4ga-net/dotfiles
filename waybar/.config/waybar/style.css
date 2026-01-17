@@ -53,7 +53,7 @@
   background: transparent;
   color: @light;
   font-family: "MesloLGM Nerd Font", "Cantarell", "Font Awesome 5 Pro";
-  font-size: 0.875em;
+  font-size: 1em;
   font-weight: bold;
 }
 
@@ -171,7 +171,7 @@
 }
 
 /* The leader (cpu) gets pill background */
-#system #cpu {
+#system #custom-systemdrawer {
   background: @nord_bg_blue;
   border-radius: 0.2em;
   font-size: 1.2em;
@@ -180,7 +180,8 @@
 /* Revealed children share the group background */
 #system #memory,
 #system #disk,
-#system #temperature {
+#system #temperature,
+#system #cpu {
   background: @bg;
 }
 

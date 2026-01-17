@@ -119,16 +119,20 @@
       "transition-left-to-right": false
     },
     "modules": [
-      "cpu",              // leader (always visible)
+      "custom/systemdrawer", // leader (always visible)
       "disk#root",         // revealed on click
       "memory",           // revealed on click
-      "temperature#cpu"  // revealed on click
+      "temperature#cpu",  // revealed on click
+      "cpu"              // revealed on click
     ]
+  },
+  "custom/systemdrawer": {
+    "format": " ",
+    "tooltip": "Click to expand system info"
   },
   "cpu": {
     "interval": 2,
-    "format": " {icon}",
-    "format-icons": ["󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
+    "format": " {usage}%",
     "tooltip": true
     // CPU tooltip text isn’t configurable in the cpu module docs; tooltip on/off is.
     // (So you’ll get Waybar’s default CPU tooltip.) :contentReference[oaicite:2]{index=2}
