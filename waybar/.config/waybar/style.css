@@ -139,7 +139,7 @@
 
 #workspaces {
   background: @bg;
-  padding: 0 0.4em;
+  padding: 0 0.2em;
   border-radius: 3px;
 }
 
@@ -279,7 +279,7 @@
   border-radius: 3px;
 }
 
-#custom-tray-icon {
+#tray-group #custom-tray-icon {
   font-size: 1.2em;
   background: @nord_bg_blue;
   margin: 0.0em 0.0em;

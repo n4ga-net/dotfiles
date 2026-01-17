@@ -5,7 +5,7 @@
     "hyprland/workspaces"
   ],
   "modules-right": [
-    "group/tray",
+    "group/tray-group",
     "hyprland/language",
     "group/system",
     "pulseaudio",
@@ -31,7 +31,7 @@
   "tray": {
     "spacing": 8
   },
-  "group/tray": {
+  "group/tray-group": {
     "orientation": "horizontal",
     "drawer": {
       "click-to-reveal": true,
