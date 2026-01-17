@@ -25,16 +25,17 @@
 @define-color warning           #ebcb8b;
 @define-color critical          #BF616A;
 
-@define-color bt_idle           #f9e2af;
-@define-color bt_connected      #88C0D0;
-@define-color bt_disabled       #6c7086;
-
 @define-color net_connected     #a6e3a1;
 @define-color net_linked        #f9e2af;
 @define-color net_disconnected  #f38ba8;
 
 @define-color pa_muted_bg       #BF616A;
 @define-color pa_source_muted   #D08770;
+
+@define-color cpu_low           #a3be8c;  /* nord14 - green */
+@define-color cpu_medium        #ebcb8b;  /* nord13 - yellow */
+@define-color cpu_high          #d08770;  /* nord12 - orange */
+@define-color cpu_critical      #bf616a;  /* nord11 - red */
 
 /* -----------------------------------------------------------------------------
  * GLOBAL RESET
@@ -152,6 +153,26 @@
 }
 
 /* -----------------------------------------------------------------------------
+ * CPU STATES
+ * -------------------------------------------------------------------------- */
+
+#custom-systemdrawer {
+  color: @light;
+}
+
+#custom-systemdrawer.medium {
+  color: @cpu_medium;
+}
+
+#custom-systemdrawer.high {
+  color: @cpu_high;
+}
+
+#custom-systemdrawer.critical {
+  color: @cpu_critical;
+}
+
+/* -----------------------------------------------------------------------------
  * SYSTEM GROUP (cpu, memory, disk, temperature)
  * The group container acts as a pill; child modules have no extra spacing.
  * -------------------------------------------------------------------------- */
@@ -175,6 +196,7 @@
   background: @nord_bg_blue;
   border-radius: 0.2em;
   font-size: 1.2em;
+  padding-right: 0.7em;
 }
 
 /* Revealed children share the group background */

@@ -127,8 +127,11 @@
     ]
   },
   "custom/systemdrawer": {
-    "format": " ",
-    "tooltip": "Click to expand system info"
+    "exec": "~/.config/waybar/scripts/systemdrawer.sh",
+    "return-type": "json",
+    "format": "",
+    "interval": 2,
+    "tooltip": true
   },
   "cpu": {
     "interval": 2,
