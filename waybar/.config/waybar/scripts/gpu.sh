@@ -6,7 +6,7 @@ usage=$(nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits 2>/
 
 # Handle error case
 if [[ -z "$usage" || ! "$usage" =~ ^[0-9]+$ ]]; then
-    echo '{"text": "N/A", "class": "", "tooltip": "GPU unavailable"}'
+    echo '{"text": "", "class": ""}'
     exit 0
 fi
 

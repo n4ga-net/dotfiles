@@ -1,11 +1,41 @@
 #!/usr/bin/env bash
 
-options=" Shutdown\n Reboot\n Suspend\n Hibernate\n Logout"
+# Toggle: if rofi is already running, kill it and exit
+if pgrep -x rofi > /dev/null; then
+    pkill -x rofi
+    exit 0
+fi
 
-choice=$(echo -e "$options" | rofi -dmenu -p "Power" \
-  -location 1 \
-  -xoffset 10 \
-  -yoffset 40)
+options=" Shutdown\n Reboot\n Suspend\n Hibernate\n Logout"
+
+choice=$(echo -e "$options" | rofi -dmenu \
+    -p "" \
+    -no-custom \
+    -me-select-entry '' \
+    -me-accept-entry 'MousePrimary' \
+    -theme-str '
+      window { 
+        location: northwest; 
+        anchor: northwest;
+        x-offset: 5px;
+        y-offset: 3px;
+        width: 200px; 
+        border-radius: 6px;
+        border: 1px;
+        border-color: #5e81ac;
+        padding: 0;
+      }
+      mainbox {
+        padding: 0;
+      }
+      inputbar { enabled: false; }
+      listview { 
+        lines: 5;
+        border: 0;
+        padding: 8px;
+        border-radius: 6px;
+      }
+    ')
 
 
 case "$choice" in
