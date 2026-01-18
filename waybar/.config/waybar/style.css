@@ -72,7 +72,7 @@
 
 .module {
   margin: 0.1em 0.2em;
-  padding: 0 0.5em;
+  padding: 0em 0.5em;
   border-radius: 0.3em;
   background: @nord_bg_blue;
   color: @light;
@@ -192,93 +192,51 @@
   color: @cpu_critical;
 }
 
-/* -----------------------------------------------------------------------------
- * SYSTEM GROUP (cpu, memory, disk, temperature)
- * The group container acts as a pill; child modules have no extra spacing.
- * -------------------------------------------------------------------------- */
-
-#system {
-  background: @bg;
-  margin: 0.1em 0.2em;
-  padding: 0;
-  border-radius: 0.3em;
-}
-
-#system .module {
-  margin: 0;
-  padding: 0 0.5em;
-  background: transparent;
-}
-
-/* The leader (cpu) gets pill background */
-#system #custom-systemdrawer {
-  background: @nord_bg_blue;
-  font-size: 1.2em;
-  padding-right: 0.7em;
-}
-
-/* Revealed children share the group background */
-#system #memory,
-#system #disk,
-#system #temperature,
-#system #cpu {
-  background: @bg;
-}
 
 /* -----------------------------------------------------------------------------
- * TRAY GROUP
+ * Groups
  * -------------------------------------------------------------------------- */
-
-#tray-group {
-  background: @bg;
-  margin: 0.1em 0.2em;
-  padding: 0;
-  border-radius: 0.3em;
-}
-
-#tray-group .module {
-  margin: 0;
-  padding: 0 0.5em;
-  background: transparent;
-}
-
-#tray-group #custom-tray-icon {
-  background: @nord_bg_blue;
-  font-size: 1.2em;
-  color: @icon_tray;
-}
-
-#tray-group #tray {
-  background: @bg;
-  padding: 0 0.25em;
-}
-
-/* -----------------------------------------------------------------------------
- * Date and Time
- * -------------------------------------------------------------------------- */
-
+#system-group,
+#tray-group,
 #clock-group {
   background: @bg;
   margin: 0.1em 0.2em;
-  padding: 0em 0.2em;
+  padding: 0.0em 0.2em;
   border-radius: 0.3em;
 }
 
+#system .module,
+#tray-group .module,
 #clock-group .module {
   margin: 0;
   padding: 0 0.5em;
   background: transparent;
 }
 
+/* Leader Pills */
+#system #custom-systemdrawer,
+#tray-group #custom-tray-icon,
 #clock-group #clock.time {
   background: @nord_bg_blue;
-  font-size: 1em;
+  font-size: 1.0em;
   color: @light;
 }
 
+
+/* Follower Pills */
+#system #memory,
+#system #disk,
+#system #temperature,
+#system #cpu,
+#tray-group #tray,
 #clock-group #clock.date {
   background: @bg;
-  padding: 0 0.25em;
+  padding: 0em 0.25em;
+}
+
+/* exceptions */
+#system #custom-systemdrawer {
+  padding-right: 0.7em;
 }
 
 

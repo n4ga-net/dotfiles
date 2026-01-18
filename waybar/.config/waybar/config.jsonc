@@ -27,11 +27,11 @@
   },
   "clock#time": {
     "format": "<span foreground='#f5c2e7'> </span>{:%H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "tooltip-format": "<span font_size='150%'><big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt></span>"
   },
   "clock#date": {
     "format": "{:%a %d %B}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "tooltip-format": "<span font_size='150%'><big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt></span>"
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
