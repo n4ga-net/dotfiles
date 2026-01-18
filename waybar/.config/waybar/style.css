@@ -18,6 +18,7 @@
 
 /* Polar Night */
 @define-color nord0              #2e3440;  /* background */
+@define-color nord0-transparent  rgba(46, 52, 64, 0.95);  /* background 95% opacity */
 @define-color nord2              #434c5e;  /* selection, elevated */
 @define-color nord3              #4c566a;  /* comments, focused */
 
@@ -53,6 +54,21 @@
 * {
   border: none;
   min-height: 0;
+}
+
+/* -----------------------------------------------------------------------------
+ * TOOLTIPS
+ * -------------------------------------------------------------------------- */
+
+tooltip {
+  background: @nord0-transparent;
+  border: 1px solid @nord3;
+  border-radius: 0.3em;
+}
+
+tooltip label {
+  color: @nord4;
+  font-family: "MesloLGM Nerd Font", "Cantarell", "Font Awesome 5 Pro";
 }
 
 /* -----------------------------------------------------------------------------
