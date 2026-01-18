@@ -71,7 +71,7 @@
  * -------------------------------------------------------------------------- */
 
 .module {
-  margin: 0.1em 0.2em;
+  margin: 0.2em 0.2em;
   padding: 0em 0.5em;
   border-radius: 0.3em;
   background: @nord_bg_blue;
@@ -218,7 +218,7 @@
 #tray-group #custom-tray-icon,
 #clock-group #clock.time {
   background: @nord_bg_blue;
-  font-size: 1.0em;
+  font-size: 1.2em;
   color: @light;
 }
 
@@ -228,6 +228,7 @@
 #system #disk,
 #system #temperature,
 #system #cpu,
+#system #custom-gpu,
 #tray-group #tray,
 #clock-group #clock.date {
   background: @bg;
@@ -237,6 +238,10 @@
 /* exceptions */
 #system #custom-systemdrawer {
   padding-right: 0.7em;
+}
+
+#clock-group #clock.time {
+  font-size: 1em;
 }
 
 
@@ -266,3 +271,9 @@
 #system #temperature { color: @light; }
 #system #temperature.warning { color: @cpu_high; }
 #system #temperature.critical { color: @cpu_critical; }
+
+/* GPU states */
+#system #custom-gpu { color: @light; }
+#system #custom-gpu.warning { color: @cpu_medium; }
+#system #custom-gpu.high { color: @cpu_high; }
+#system #custom-gpu.critical { color: @cpu_critical; }

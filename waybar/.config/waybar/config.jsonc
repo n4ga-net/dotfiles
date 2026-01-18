@@ -136,10 +136,11 @@
     },
     "modules": [
       "custom/systemdrawer", // leader (always visible)
+      "custom/gpu",       // revealed on click
       "disk#root",         // revealed on click
       "memory",           // revealed on click
       "temperature#cpu",  // revealed on click
-      "cpu"              // revealed on click
+      "cpu"             // revealed on click
     ]
   },
   "custom/systemdrawer": {
@@ -157,6 +158,13 @@
       "high": 75,
       "critical": 90
     },
+    "tooltip": true
+  },
+  "custom/gpu": {
+    "exec": "~/.config/waybar/scripts/gpu.sh",
+    "return-type": "json",
+    "format": "󰢮 {}",
+    "interval": 2,
     "tooltip": true
   },
   "temperature#cpu": {
