@@ -59,6 +59,9 @@ alias ls='eza --hyperlink --icons -g'
 # Alias for Bat
 alias cat='bat -p'
 
+#Secrets
+[ -f ~/.config/opencode/.env ] && export $(grep -v '^#' ~/.config/opencode/.env | xargs)
+
 # Init starship
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"

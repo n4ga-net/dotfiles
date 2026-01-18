@@ -26,9 +26,8 @@
         "MCP_MODE": "stdio",
         "LOG_LEVEL": "error",
         "DISABLE_CONSOLE_OUTPUT": "true",
-        "N8N_API_URL": "https://n8n.local.corp.n4ga.net",
-        "N8N_API_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiZDc0ODQ0OS1iMzc4LTQyNzQtYWNlOC1mNmRiNzYyODJmOWEiLCJpc3MiOiJuOG4iLCJhdWQiOiJwdWJsaWMtYXBpIiwiaWF0IjoxNzY4NTk2MzQyLCJleHAiOjE3NzExMzE2MDB9.nciJd3I54PNrEsquBGBTD-cmf35idpsj7goWSS_Jk2k"
-        
+        "N8N_API_URL": "${N8N_API_URL}",
+        "N8N_API_KEY": "${N8N_API_KEY}"
       },
       "enabled": true
     }
