@@ -37,6 +37,12 @@
 @define-color cpu_high          #d08770;  /* nord12 - orange */
 @define-color cpu_critical      #bf616a;  /* nord11 - red */
 
+/* Static icon colors from Nord palette */
+@define-color icon_volume       #88c0d0;  /* nord8 - frost cyan */
+@define-color icon_notify       #ebcb8b;  /* nord13 - aurora yellow */
+@define-color icon_power        #bf616a;  /* nord11 - aurora red */
+@define-color icon_tray         #8fbcbb;  /* nord7 - frost teal */
+
 /* -----------------------------------------------------------------------------
  * GLOBAL RESET
  * -------------------------------------------------------------------------- */
@@ -109,6 +115,16 @@
 
 #custom-power {
   padding-right: 0.8em;
+  background: @icon_power;
+  color: @light;
+}
+
+/* -----------------------------------------------------------------------------
+ * NOTIFICATIONS
+ * -------------------------------------------------------------------------- */
+
+#custom-notifications {
+  color: @icon_notify;
 }
 
 /* -----------------------------------------------------------------------------
@@ -122,6 +138,10 @@
 /* -----------------------------------------------------------------------------
  * PULSEAUDIO
  * -------------------------------------------------------------------------- */
+
+#pulseaudio {
+  color: @icon_volume;
+}
 
 #pulseaudio.muted {
   background: @pa_muted_bg;
@@ -225,6 +245,7 @@
 #tray-group #custom-tray-icon {
   background: @nord_bg_blue;
   font-size: 1.2em;
+  color: @icon_tray;
 }
 
 #tray-group #tray {
