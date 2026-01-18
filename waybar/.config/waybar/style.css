@@ -200,7 +200,7 @@
 #tray-group,
 #clock-group {
   background: @bg;
-  margin: 0.1em 0.2em;
+  margin: 0.2em 0.2em;
   padding: 0.0em 0.2em;
   border-radius: 0.3em;
 }
