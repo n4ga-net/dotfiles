@@ -27,6 +27,7 @@
 /* Frost */
 @define-color nord7              #8fbcbb;  /* teal */
 @define-color nord8              #88c0d0;  /* cyan */
+@define-color nord9              #81a1c1;  /* blue */
 
 /* Aurora */
 @define-color nord11             #bf616a;  /* red - error/critical */
@@ -228,7 +229,7 @@
 }
 
 #system #custom-systemdrawer {
-  color: @nord8;  /* frost cyan */
+  color: @nord9;  /* frost blue */
 }
 
 #tray-group #custom-tray-icon {
