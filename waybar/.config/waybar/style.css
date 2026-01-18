@@ -196,7 +196,7 @@
 /* -----------------------------------------------------------------------------
  * Groups
  * -------------------------------------------------------------------------- */
-#system-group,
+#system,
 #tray-group,
 #clock-group {
   background: @bg;
@@ -205,11 +205,11 @@
   border-radius: 0.3em;
 }
 
-#system-group .module,
+#system .module,
 #tray-group .module,
 #clock-group .module {
-  margin: 0;
-  padding: 0 0.5em;
+  margin: 0em 0em;
+  padding: 0em 0.5em;
   background: transparent;
 }
 
