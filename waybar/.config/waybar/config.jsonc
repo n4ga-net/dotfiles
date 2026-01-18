@@ -74,7 +74,8 @@
   },
   "custom/tray-icon": {
     "format": "󰀻",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "Click to expand/retract"
   },
   "hyprland/language": {
     "format": "<span size='12000'>{short}</span>",
@@ -145,10 +146,10 @@
   },
   "custom/systemdrawer": {
     "exec": "~/.config/waybar/scripts/systemdrawer.sh",
-    "return-type": "json",
     "format": "󰓅",
     "interval": 2,
-    "tooltip": true
+    "tooltip": true,
+    "tooltip-format": "Click to expand/retract"
   },
   "cpu": {
     "interval": 2,
