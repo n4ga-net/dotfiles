@@ -152,7 +152,7 @@
   },
   "cpu": {
     "interval": 2,
-    "format": " {usage}%",
+    "format": "<span foreground='#D8DEE9'></span> {usage}%",
     "states": {
       "warning": 50,
       "high": 75,
@@ -163,7 +163,7 @@
   "custom/gpu": {
     "exec": "~/.config/waybar/scripts/gpu.sh",
     "return-type": "json",
-    "format": "󰢮 {}",
+    "format": "<span foreground='#D8DEE9'>󰢮</span> {}",
     "interval": 2,
     "tooltip": true
   },
@@ -180,15 +180,15 @@
     ],
     "critical-threshold": 90,
     "warning-threshold": 80,
-    "format": " {temperatureC}°C",
-    "format-warning": " {temperatureC}°C",
-    "format-critical": " {temperatureC}°C",
+    "format": "<span foreground='#D8DEE9'></span> {temperatureC}°C",
+    "format-warning": "<span foreground='#D8DEE9'></span> {temperatureC}°C",
+    "format-critical": "<span foreground='#D8DEE9'></span> {temperatureC}°C",
     "tooltip": true,
     "tooltip-format": "CPU temp: {temperatureC}°C"
   },
   "memory": {
     "interval": 5,
-    "format": " {percentage}%",
+    "format": "<span foreground='#D8DEE9'></span> {percentage}%",
     "states": {
       "warning": 50,
       "high": 75,
@@ -199,7 +199,7 @@
   "disk#root": {
     "path": "/",
     "interval": 30,
-    "format": "󰋊 {percentage_used}%",
+    "format": "<span foreground='#D8DEE9'>󰋊</span> {percentage_used}%",
     "states": {
       "warning": 60,
       "high": 80,

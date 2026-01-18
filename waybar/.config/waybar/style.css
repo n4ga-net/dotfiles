@@ -3,45 +3,47 @@
  * -------------------------------------------------------------------------- */
 
 @keyframes blink-warning {
-  70% { color: @light; }
-  to  { color: @light; background-color: @warning; }
+  70% { color: @nord4; }
+  to  { color: @nord4; background-color: @nord13; }
 }
 
 @keyframes blink-critical {
-  70% { color: @light; }
-  to  { color: @light; background-color: @critical; }
+  70% { color: @nord4; }
+  to  { color: @nord4; background-color: @nord11; }
 }
 
 /* -----------------------------------------------------------------------------
- * COLORS
+ * COLORS - Nord Palette
  * -------------------------------------------------------------------------- */
 
-@define-color bg                #2E3440;
-@define-color light             #D8DEE9;
+/* Polar Night */
+@define-color nord0              #2e3440;  /* background */
+@define-color nord2              #434c5e;  /* selection, elevated */
+@define-color nord3              #4c566a;  /* comments, focused */
 
-@define-color nord_bg_blue      #434C5E;
-@define-color workspacesfocused #4C566A;
+/* Snow Storm */
+@define-color nord4              #d8dee9;  /* primary text */
 
-@define-color warning           #ebcb8b;
-@define-color critical          #BF616A;
+/* Frost */
+@define-color nord7              #8fbcbb;  /* teal */
+@define-color nord8              #88c0d0;  /* cyan */
 
-@define-color net_connected     #a6e3a1;
-@define-color net_linked        #f9e2af;
-@define-color net_disconnected  #f38ba8;
+/* Aurora */
+@define-color nord11             #bf616a;  /* red - error/critical */
+@define-color nord12             #d08770;  /* orange - high */
+@define-color nord13             #ebcb8b;  /* yellow - warning/medium */
+@define-color nord14             #a3be8c;  /* green - success/low */
 
-@define-color pa_muted_bg       #BF616A;
-@define-color pa_source_muted   #D08770;
+/* Semantic Aliases - Status Levels */
+@define-color status_low         @nord14;
+@define-color status_medium      @nord13;
+@define-color status_high        @nord12;
+@define-color status_critical    @nord11;
 
-@define-color cpu_low           #a3be8c;  /* nord14 - green */
-@define-color cpu_medium        #ebcb8b;  /* nord13 - yellow */
-@define-color cpu_high          #d08770;  /* nord12 - orange */
-@define-color cpu_critical      #bf616a;  /* nord11 - red */
-
-/* Static icon colors from Nord palette */
-@define-color icon_volume       #88c0d0;  /* nord8 - frost cyan */
-@define-color icon_notify       #ebcb8b;  /* nord13 - aurora yellow */
-@define-color icon_power        #bf616a;  /* nord11 - aurora red */
-@define-color icon_tray         #8fbcbb;  /* nord7 - frost teal */
+/* Network Status (mapped to Nord equivalents) */
+@define-color net_connected      @nord14;  /* green - success */
+@define-color net_linked         @nord13;  /* yellow - warning */
+@define-color net_disconnected   @nord11;  /* red - error */
 
 /* -----------------------------------------------------------------------------
  * GLOBAL RESET
@@ -58,7 +60,7 @@
 
 #waybar {
   background: transparent;
-  color: @light;
+  color: @nord4;
   font-family: "MesloLGM Nerd Font", "Cantarell", "Font Awesome 5 Pro";
   font-size: 1em;
   font-weight: bold;
@@ -74,8 +76,8 @@
   margin: 0.2em 0.2em;
   padding: 0em 0.5em;
   border-radius: 0.3em;
-  background: @nord_bg_blue;
-  color: @light;
+  background: @nord2;
+  color: @nord4;
 }
 
 /* -----------------------------------------------------------------------------
@@ -83,7 +85,7 @@
  * -------------------------------------------------------------------------- */
 
 #workspaces {
-  background: @bg;
+  background: @nord0;
   padding: 0 0.5em;
 }
 
@@ -98,14 +100,14 @@
 
 #workspaces button.active,
 #workspaces button.focused {
-  background: @workspacesfocused;
-  color: @light;
+  background: @nord3;
+  color: @nord4;
   opacity: 1;
 }
 
 #workspaces button.urgent {
-  background: @critical;
-  color: @light;
+  background: @nord11;
+  color: @nord4;
   opacity: 1;
 }
 
@@ -115,8 +117,8 @@
 
 #custom-power {
   padding-right: 0.8em;
-  background: @icon_power;
-  color: @light;
+  background: @nord11;
+  color: @nord4;
 }
 
 /* -----------------------------------------------------------------------------
@@ -124,7 +126,7 @@
  * -------------------------------------------------------------------------- */
 
 #custom-notifications {
-  color: @icon_notify;
+  color: @nord13;
 }
 
 /* -----------------------------------------------------------------------------
@@ -140,17 +142,17 @@
  * -------------------------------------------------------------------------- */
 
 #pulseaudio {
-  color: @icon_volume;
+  color: @nord8;
 }
 
 #pulseaudio.muted {
-  background: @pa_muted_bg;
-  color: @pa_muted_bg;
+  background: @nord11;
+  color: @nord11;
 }
 
 #pulseaudio.source-muted {
-  background: @pa_source_muted;
-  color: @light;
+  background: @nord12;
+  color: @nord4;
 }
 
 /* -----------------------------------------------------------------------------
@@ -158,38 +160,18 @@
  * -------------------------------------------------------------------------- */
 
 #battery.warning:not(.charging) {
-  background: @warning;
-  color: @bg;
+  background: @nord13;
+  color: @nord0;
 }
 
 #battery.critical:not(.charging) {
-  background: @critical;
-  color: @light;
+  background: @nord11;
+  color: @nord4;
   animation-name: blink-critical;
   animation-duration: 0.5s;
   animation-timing-function: steps(12);
   animation-iteration-count: infinite;
   animation-direction: alternate;
-}
-
-/* -----------------------------------------------------------------------------
- * CPU STATES
- * -------------------------------------------------------------------------- */
-
-#custom-systemdrawer {
-  color: @light;
-}
-
-#custom-systemdrawer.medium {
-  color: @cpu_medium;
-}
-
-#custom-systemdrawer.high {
-  color: @cpu_high;
-}
-
-#custom-systemdrawer.critical {
-  color: @cpu_critical;
 }
 
 
@@ -199,7 +181,7 @@
 #system,
 #tray-group,
 #clock-group {
-  background: @bg;
+  background: @nord0;
   margin: 0.2em 0.2em;
   padding: 0.0em 0.2em;
   border-radius: 0.3em;
@@ -217,9 +199,9 @@
 #system #custom-systemdrawer,
 #tray-group #custom-tray-icon,
 #clock-group #clock.time {
-  background: @nord_bg_blue;
+  background: @nord2;
   font-size: 1.2em;
-  color: @light;
+  color: @nord4;
 }
 
 
@@ -231,8 +213,9 @@
 #system #custom-gpu,
 #tray-group #tray,
 #clock-group #clock.date {
-  background: @bg;
-  padding: 0em 0.25em;
+  background: @nord0;
+  padding: 0em 0.5em;
+  border: 1em
 }
 
 /* exceptions */
@@ -244,36 +227,45 @@
   font-size: 1em;
 }
 
+#system #custom-systemdrawer {
+  color: @nord8;  /* frost cyan */
+}
+
+#tray-group #custom-tray-icon {
+  color: @nord7;  /* frost teal */
+}
+
+
 
 /* -----------------------------------------------------------------------------
  * SYSTEM DRAWER MODULE STATES (green → yellow → orange → red)
  * -------------------------------------------------------------------------- */
 
 /* CPU states */
-#system #cpu { color: @light; }
-#system #cpu.warning { color: @cpu_medium; }
-#system #cpu.high { color: @cpu_high; }
-#system #cpu.critical { color: @cpu_critical; }
+#system #cpu { color: @status_low; }
+#system #cpu.warning { color: @status_medium; }
+#system #cpu.high { color: @status_high; }
+#system #cpu.critical { color: @status_critical; }
 
 /* Memory states */
-#system #memory { color: @light; }
-#system #memory.warning { color: @cpu_medium; }
-#system #memory.high { color: @cpu_high; }
-#system #memory.critical { color: @cpu_critical; }
+#system #memory { color: @status_low; }
+#system #memory.warning { color: @status_medium; }
+#system #memory.high { color: @status_high; }
+#system #memory.critical { color: @status_critical; }
 
 /* Disk states */
-#system #disk { color: @light; }
-#system #disk.warning { color: @cpu_medium; }
-#system #disk.high { color: @cpu_high; }
-#system #disk.critical { color: @cpu_critical; }
+#system #disk { color: @status_low; }
+#system #disk.warning { color: @status_medium; }
+#system #disk.high { color: @status_high; }
+#system #disk.critical { color: @status_critical; }
 
 /* Temperature states */
-#system #temperature { color: @light; }
-#system #temperature.warning { color: @cpu_high; }
-#system #temperature.critical { color: @cpu_critical; }
+#system #temperature { color: @status_low; }
+#system #temperature.warning { color: @status_high; }
+#system #temperature.critical { color: @status_critical; }
 
 /* GPU states */
-#system #custom-gpu { color: @light; }
-#system #custom-gpu.warning { color: @cpu_medium; }
-#system #custom-gpu.high { color: @cpu_high; }
-#system #custom-gpu.critical { color: @cpu_critical; }
+#system #custom-gpu { color: @status_low; }
+#system #custom-gpu.warning { color: @status_medium; }
+#system #custom-gpu.high { color: @status_high; }
+#system #custom-gpu.critical { color: @status_critical; }
