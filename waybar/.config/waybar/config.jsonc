@@ -10,11 +10,27 @@
     "group/system",
     "pulseaudio",
     "battery",
-    "clock",
+    "group/clock-group",
     "custom/notifications"
   ],
-  "clock": {
-    "format": "<span foreground='#f5c2e7'>  </span>{:%a %d %H:%M}",
+  "group/clock-group": {
+    "orientation": "horizontal",
+    "drawer": {
+      "click-to-reveal": true,
+      "transition-duration": 250,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "clock#time",
+      "clock#date"
+    ]
+  },
+  "clock#time": {
+    "format": "<span foreground='#f5c2e7'> </span>{:%H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "clock#date": {
+    "format": "{:%a %d %B}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "pulseaudio": {

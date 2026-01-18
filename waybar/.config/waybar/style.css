@@ -254,6 +254,35 @@
 }
 
 /* -----------------------------------------------------------------------------
+ * Date and Time
+ * -------------------------------------------------------------------------- */
+
+#clock-group {
+  background: @bg;
+  margin: 0.1em 0.2em;
+  padding: 0em 0.2em;
+  border-radius: 0.3em;
+}
+
+#clock-group .module {
+  margin: 0;
+  padding: 0 0.5em;
+  background: transparent;
+}
+
+#clock-group #clock.time {
+  background: @nord_bg_blue;
+  font-size: 1em;
+  color: @light;
+}
+
+#clock-group #clock.date {
+  background: @bg;
+  padding: 0 0.25em;
+}
+
+
+/* -----------------------------------------------------------------------------
  * SYSTEM DRAWER MODULE STATES (green → yellow → orange → red)
  * -------------------------------------------------------------------------- */
 
