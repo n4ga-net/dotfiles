@@ -205,7 +205,7 @@
   border-radius: 0.3em;
 }
 
-#system .module,
+#system-group .module,
 #tray-group .module,
 #clock-group .module {
   margin: 0;
@@ -218,7 +218,7 @@
 #tray-group #custom-tray-icon,
 #clock-group #clock.time {
   background: @nord_bg_blue;
-  font-size: 1.0em;
+  font-size: 1.2em;
   color: @light;
 }
 
@@ -237,6 +237,10 @@
 /* exceptions */
 #system #custom-systemdrawer {
   padding-right: 0.7em;
+}
+
+#clock-group #clock.time {
+  font-size: 1em;
 }
 
 
