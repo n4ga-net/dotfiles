@@ -67,7 +67,7 @@
 .module {
   margin: 0.1em 0.2em;
   padding: 0 0.5em;
-  border-radius: 0.2em;
+  border-radius: 0.3em;
   background: @nord_bg_blue;
   color: @light;
 }
@@ -78,7 +78,7 @@
 
 #workspaces {
   background: @bg;
-  padding: 0 0.2em;
+  padding: 0 0.5em;
 }
 
 #workspaces button {
@@ -108,7 +108,7 @@
  * -------------------------------------------------------------------------- */
 
 #custom-power {
-  min-width: 1em;
+  padding-right: 0.8em;
 }
 
 /* -----------------------------------------------------------------------------
@@ -181,20 +181,18 @@
   background: @bg;
   margin: 0.1em 0.2em;
   padding: 0;
-  border-radius: 0.2em;
+  border-radius: 0.3em;
 }
 
 #system .module {
   margin: 0;
   padding: 0 0.5em;
   background: transparent;
-  border-radius: 0;
 }
 
 /* The leader (cpu) gets pill background */
 #system #custom-systemdrawer {
   background: @nord_bg_blue;
-  border-radius: 0.2em;
   font-size: 1.2em;
   padding-right: 0.7em;
 }
@@ -215,19 +213,17 @@
   background: @bg;
   margin: 0.1em 0.2em;
   padding: 0;
-  border-radius: 0.2em;
+  border-radius: 0.3em;
 }
 
 #tray-group .module {
   margin: 0;
   padding: 0 0.5em;
   background: transparent;
-  border-radius: 0;
 }
 
 #tray-group #custom-tray-icon {
   background: @nord_bg_blue;
-  border-radius: 0.2em;
   font-size: 1.2em;
 }
 

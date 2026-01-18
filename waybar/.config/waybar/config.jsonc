@@ -129,7 +129,7 @@
   "custom/systemdrawer": {
     "exec": "~/.config/waybar/scripts/systemdrawer.sh",
     "return-type": "json",
-    "format": "",
+    "format": "󰓅",
     "interval": 2,
     "tooltip": true
   },
