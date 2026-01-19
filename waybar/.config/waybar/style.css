@@ -200,8 +200,9 @@ tooltip label {
 #clock-group {
   background: @nord0;
   margin: 0.2em 0.2em;
-  padding: 0.0em 0.2em;
+  padding: 0.0em 0.0em;
   border-radius: 0.3em;
+  padding-left: 0.0em;
 }
 
 #system .module,
@@ -236,16 +237,13 @@ tooltip label {
 }
 
 /* exceptions */
-#system #custom-systemdrawer {
-  padding-right: 0.7em;
-}
-
 #clock-group #clock.time {
   font-size: 1em;
 }
 
 #system #custom-systemdrawer {
   color: @nord9;  /* frost blue */
+  padding-right: 0.7em;
 }
 
 #tray-group #custom-tray-icon {

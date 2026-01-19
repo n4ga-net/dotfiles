@@ -41,4 +41,12 @@ vim.filetype.add({
 })
 
 -- Minimize cmd line
-vim.opt.cmdheight = 0
+-- vim.opt.cmdheight = 0
+
+-- Show whitespace characters
+-- vim.opt.list = true
+-- vim.opt.listchars = {
+--   tab = "» ",
+--   trail = "·",
+--   nbsp = "␣",
+-- }

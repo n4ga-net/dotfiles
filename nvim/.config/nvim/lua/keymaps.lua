@@ -31,8 +31,9 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Search prev (centered)", nowait = tr
 -- <leader> Search
 -- ===========================================================================
 -- clear search
+-- keeping leader sc for now while I get used to just Esc
+vim.keymap.set("n", "<Esc>", ":nohl<CR>", { desc = "Clear search highlights" })
 vim.keymap.set("n", "<leader>sc", ":nohl<CR>", { desc = "Clear search highlights" })
-
 -- =============================================================================
 -- <leader> Paste
 -- =============================================================================
