@@ -163,12 +163,10 @@ tooltip label {
 }
 
 #pulseaudio.muted {
-  background: @nord11;
   color: @nord11;
 }
 
 #pulseaudio.source-muted {
-  background: @nord12;
   color: @nord4;
 }
 
