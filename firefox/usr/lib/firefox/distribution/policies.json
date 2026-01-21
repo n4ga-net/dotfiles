@@ -7,14 +7,15 @@
       "{d634138d-c276-4fc8-924b-40a0ea21d284}": {
         "installation_mode": "force_installed",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/1password-x-password-manager/latest.xpi",
-        "toolbar": "visible"
+        "default_area": "navbar"
       },
 
       "nordvpnproxy@nordvpn.com": {
         "installation_mode": "force_installed",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/nordvpn-proxy-extension/latest.xpi",
-        "toolbar": "visible"
+        "default_area": "navbar"
       }
     }
   }
 }
+
