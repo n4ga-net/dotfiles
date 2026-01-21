@@ -168,7 +168,9 @@ tooltip label {
 
 #pulseaudio.source-muted {
   color: @nord4;
+  background: @nord11;
 }
+
 
 /* -----------------------------------------------------------------------------
  * BATTERY STATES
