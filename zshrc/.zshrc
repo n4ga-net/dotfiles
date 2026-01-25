@@ -59,6 +59,9 @@ alias ls='eza --hyperlink --icons -g'
 # Alias for Bat
 alias cat='bat -p'
 
+# Vi mode prompt
+bindkey -v
+
 #Secrets
 [ -f ~/.config/opencode/.env ] && export $(grep -v '^#' ~/.config/opencode/.env | xargs)
 
