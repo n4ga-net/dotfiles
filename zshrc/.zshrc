@@ -61,6 +61,7 @@ alias cat='bat -p'
 
 # Vi mode prompt
 bindkey -v
+export KEYTIMEOUT=1
 
 #Secrets
 [ -f ~/.config/opencode/.env ] && export $(grep -v '^#' ~/.config/opencode/.env | xargs)
