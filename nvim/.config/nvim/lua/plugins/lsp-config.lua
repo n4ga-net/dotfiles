@@ -53,7 +53,11 @@ return {
 			vim.lsp.config("fleet_gitops", {
 				cmd = { fleet_cmd, "lsp" },
 				filetypes = { "yaml", "yml" },
-				root_dir = function(fname)
+				root_dir = function(path_or_bufnr)
+					local fname = path_or_bufnr
+					if type(path_or_bufnr) == "number" then
+						fname = vim.api.nvim_buf_get_name(path_or_bufnr)
+					end
 					local root = vim.fs.find({ "default.yml", "default.yaml", "teams", "lib" }, {
 						path = fname,
 						upward = true,
