@@ -29,6 +29,10 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local fleet_cmd = vim.fn.exepath("fleet-schema-gen")
+			if fleet_cmd == "" then
+				fleet_cmd = vim.fn.expand("~/.local/bin/fleet-schema-gen")
+			end
 			-- list of servers you want
 			local servers = {
 				"lua_ls",
@@ -43,13 +47,29 @@ return {
 				"vimls",
 				"yamlls",
 				"markdown_oxide",
+				"fleet_gitops",
 			}
+
+			vim.lsp.config("fleet_gitops", {
+				cmd = { fleet_cmd, "lsp" },
+				filetypes = { "yaml", "yml" },
+				root_dir = function(fname)
+					local root = vim.fs.find({ "default.yml", "default.yaml", "teams", "lib" }, {
+						path = fname,
+						upward = true,
+					})[1]
+					return root and vim.fs.dirname(root) or nil
+				end,
+				capabilities = capabilities,
+			})
 
 			-- extend each server config with your capabilities
 			for _, server in ipairs(servers) do
-				vim.lsp.config(server, {
-					capabilities = capabilities,
-				})
+				if server ~= "fleet_gitops" then
+					vim.lsp.config(server, {
+						capabilities = capabilities,
+					})
+				end
 			end
 			-- enable all these servers
 			vim.lsp.enable(servers)
