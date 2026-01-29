@@ -63,8 +63,9 @@ alias cat='bat -p'
 bindkey -v
 export KEYTIMEOUT=1
 
+
 #Secrets
-[ -f ~/.config/opencode/.env ] && export $(grep -v '^#' ~/.config/opencode/.env | xargs)
+[ -f ~/.config/opencode/.env ] && set -a && source ~/.config/opencode/.env && set +a
 
 # Init starship
 eval "$(starship init zsh)"
